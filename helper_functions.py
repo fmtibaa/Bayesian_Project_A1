@@ -316,3 +316,47 @@ def calculate_distance_matrix_pred(data_df, data_df_to_pred, id_column='location
     )
 
     return distance_matrix
+
+def save_stan_fit_and_summary_with_data(stan_fit, summary_df, file_name_prefix="stan_results"):
+    """
+    Save Stan fit, summary dataframe, and input model data in a folder.
+
+    Parameters:
+    - stan_fit: Stan fit object
+        The Stan fit object obtained after sampling.
+    - summary_df: pd.DataFrame
+        Summary dataframe obtained from the fit object.
+    - input_model_data: dict
+        Input model data to be saved.
+    - file_name_prefix: str, optional
+        Prefix for the folder and file names. Default is "stan_results".
+
+    Returns:
+    - dict
+        Dictionary containing the file paths of the saved objects.
+    """
+    # Generate a unique timestamp
+    unique_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+
+    # Get the current working directory
+    notebook_directory = os.getcwd()
+
+    # Create a folder with the specified file_name_prefix in the current working directory
+    folder_name = f"{file_name_prefix}_{unique_timestamp}"
+    folder_path = os.path.join("../", folder_name)
+    os.makedirs(folder_path)
+
+    # Save the Stan fit object
+    fit_file_path = os.path.join(folder_path, f"{file_name_prefix}_fit_{unique_timestamp}.pkl")
+    with open(fit_file_path, "wb") as file:
+        pickle.dump(stan_fit, file)
+
+    # Save the summary of the fit object
+    summary_file_path = os.path.join(folder_path, f"{file_name_prefix}_summary_{unique_timestamp}.csv")
+    summary_df.to_csv(summary_file_path, index=False)
+
+    return {
+        "stan_fit_object": fit_file_path,
+        "summary_df": summary_file_path,
+        "folder_path": folder_path
+    }
