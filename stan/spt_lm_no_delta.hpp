@@ -64,7 +64,7 @@ static constexpr std::array<const char*, 166> locations_array__ =
  " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm_no_delta.stan', line 133, column 10 to column 111)",
  " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm_no_delta.stan', line 134, column 10 to column 185)",
  " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm_no_delta.stan', line 135, column 10 to column 36)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm_no_delta.stan', line 136, column 10 to column 67)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm_no_delta.stan', line 136, column 10 to column 62)",
  " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm_no_delta.stan', line 131, column 47 to line 137, column 9)",
  " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm_no_delta.stan', line 131, column 8 to line 137, column 9)",
  " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm_no_delta.stan', line 129, column 37 to line 138, column 7)",
@@ -1392,8 +1392,7 @@ class spt_lm_no_delta_model final : public model_base_crtp<spt_lm_no_delta_model
             zeta = (arg_1 + arg_2);
             current_statement__ = 55;
             stan::model::assign(o_pred_sim_s_t,
-              stan::math::normal_rng(zeta, stan::math::abs(G_delta),
-                base_rng__),
+              stan::math::normal_rng(zeta, G_delta, base_rng__),
               "assigning variable o_pred_sim_s_t", stan::model::index_uni(i),
                                                      stan::model::index_uni(t),
                                                      stan::model::index_uni(j));
