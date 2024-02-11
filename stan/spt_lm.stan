@@ -16,6 +16,8 @@ data {
     matrix[N_stations_to_pred, N_stations] dist_pred; // distance matrix which represents the distance from the stations to predict to every other station in the data set
     matrix[N_stations_to_pred, N_stations_to_pred] dist_pred_to_pred; // distance matrix which represents the distance between the stations to predict
     vector[N_weeks_to_pred] weeks_to_pred; // represents the time on which we want to perform prediction
+    array[N_years_to_pred,to_int(max(weeks_to_pred))] matrix[N_stations,N_covariates] delta_pred_sim_t; // represents the array of delta value in the weeks on which we want to do the prediction in the observed location
+    array[N_years_to_pred,to_int(max(weeks_to_pred))] matrix[N_stations_to_pred,N_covariates] delta_pred_sim_s_t; // represents the array of delta value in the weeks and sensors on which we want to do the prdiction
 
     real<lower=0> a;
     real<lower=0> b;
@@ -32,9 +34,6 @@ parameters {
     array[N_years] real mu;
     array[N_years,N_stations] real gamma;
 
-    matrix[N_covariates, N_covariates] A_raw;  // Lower triangular matrix elements (raw scale)
-    array[N_covariates] real phi_delta;
-
     real<lower=0> tau_eta;
     real<lower=0> tau_gamma;
     real<lower=0> tau_epsilon;
@@ -49,20 +48,6 @@ transformed parameters {
             Sigma_gamma[i,j]=(1/tau_gamma)*exp(-phi_gamma_esti*dist[i,j]);
         }
     }
-
-    matrix[N_stations, N_stations] Sigma_delta;
-    for(i in 1:N_stations){
-      for(j in 1:N_stations){
-        real s = 0;
-        for(k in 1:N_covariates){
-          // Extract k-th column of A and multiply by its transpose
-          vector[N_covariates] column_k = A_raw[:, k];
-          real t_k = column_k'*column_k;
-          s += exp(-0.049*dist[i,j])*t_k;
-        }
-        Sigma_delta[i,j] = s;
-      }
-    }
 }
 
 model {
@@ -74,34 +59,17 @@ model {
     tau_gamma ~ gamma(a, b);
     tau_epsilon ~ gamma(a, b);
     mu ~ normal(0,s0);//same
-    // Priors for the elements of the lower triangular matrix
-    for (j in 1:N_covariates) {
-      for (i in 1:j) {
-        A_raw[i, j] ~ normal(0, 1);  // Prior for the elements
-      }
-    }
-
-    // Prior fo the phi_delta
-    /*for (k in 1:N_covariates){
-      phi_delta[k] ~ uniform(0.001,0.1);
-    }*/
-    // define the distribution of delta
-    for (i in 1:N_years){
-      for (j in 1:N_weeks){
-        for (p in 1:N_covariates){
-          delta[i][j][:, p] ~ multi_normal(zero, Sigma_gamma);
-        }
-      }
-    }
 
     for (i in 1:N_years){
       for (j in 1:N_weeks){
         to_vector(eta[i][j]) ~ multi_normal(zero,Sigma_eta);
       }
     }
+
     for (i in 1:N_years){
       to_vector(gamma[i]) ~ multi_normal(zero,Sigma_gamma);
     }
+
     for (i in 1:N_years) {
       y[i][1] ~ normal(rep_vector(mu[i],N_stations)+to_vector(gamma[i]), 1/tau_epsilon);
       for (j in 2:N_weeks){
@@ -114,8 +82,6 @@ generated quantities {
     vector[N_stations] zero = rep_vector(0,N_stations);
     // Posterior predictive distribution
     array[N_years_to_pred, N_stations_to_pred] real gamma_pred_sim; // represents values of gamma in a new location
-    array[N_years_to_pred,to_int(max(weeks_to_pred))] matrix[N_stations,N_covariates] delta_pred_sim_t; // represents the array of prediction of delta value in new time
-    array[N_years_to_pred,to_int(max(weeks_to_pred))] matrix[N_stations_to_pred,N_covariates] delta_pred_sim_s_t; // represents the array of prediction of delta value in new time and new location
     array[N_years_to_pred,to_int(max(weeks_to_pred)),N_stations] real o_pred_sim_t; // represents the O value predicted for new time
     array[N_years_to_pred,to_int(max(weeks_to_pred)),N_stations_to_pred] real o_pred_sim_s_t; // represents the O value predicted for a new location
     array[N_years_to_pred,N_weeks_to_pred,N_stations_to_pred] real y_pred_sim;// represents the array of values for ozon level predicted for new time and new location
@@ -148,53 +114,6 @@ generated quantities {
     for (i in 1:N_years_to_pred){
       for (j in 1:N_stations_to_pred){
         gamma_pred_sim[i,j] = normal_rng(Sigma_gamma_12[i, ] * Sigma_gamma_inv * to_vector(gamma[i]), (1/tau_gamma) * (1 - Sigma_gamma_12[i, ] * Sigma_gamma_inv * Sigma_gamma_12[i, ]'));
-      }
-    }
-
-    // Calculate the derivded quantity Sigma_delta_12
-    matrix[N_stations_to_pred, N_stations] Sigma_delta_12;
-    for(i in 1:N_stations_to_pred){
-      for(j in 1:N_stations){
-        real s = 0;
-        for(k in 1:N_covariates){
-          // Extract k-th column of A and multiply by its transpose
-          vector[N_covariates] column_k = A_raw[:, k];
-          real t_k = column_k'*column_k;
-          s += exp(-0.049*dist_pred[i,j])*t_k;
-        }
-        Sigma_delta_12[i,j] = s;
-      }
-    }
-
-    // Calculate the derivded quantity Sigma_delta_11
-    matrix[N_stations_to_pred, N_stations_to_pred] Sigma_delta_11;
-    for(i in 1:N_stations_to_pred){
-      for(j in 1:N_stations_to_pred){
-        real s = 0;
-        for(k in 1:N_covariates){
-          // Extract k-th column of A and multiply by its transpose
-          vector[N_covariates] column_k = A_raw[:, k];
-          real t_k = column_k'*column_k;
-          s += exp(-0.049*dist_pred_to_pred[i,j])*t_k;
-        }
-        Sigma_delta_11[i,j] = s;
-      }
-    }
-
-    // Draw delta_pred_sim_t from its posterior predictive distribution
-    for (i in 1:N_years_to_pred){
-      for (j in 1:N_weeks_to_pred){
-        for (p in 1:N_covariates){
-          delta_pred_sim_t[i][j][:, p] = multi_normal_rng(zero, Sigma_delta);
-        }
-      }
-    }
-    // Draw delta_pred_sim_s_t from its posterior predictive distribution
-    for (i in 1:N_years_to_pred){
-      for (j in 1:N_weeks_to_pred){
-        for (p in 1:N_covariates){
-          delta_pred_sim_s_t[i][j][:, p] = multi_normal_rng(Sigma_delta_12 * inverse(Sigma_delta) * delta_pred_sim_t[i][j][:, p], Sigma_delta_11 - Sigma_delta_12 * inverse(Sigma_delta) * transpose(Sigma_delta_12));
-        }
       }
     }
 

@@ -8,168 +8,99 @@ using namespace stan::math;
 
 
 stan::math::profile_map profiles__;
-static constexpr std::array<const char*, 242> locations_array__ = 
+static constexpr std::array<const char*, 166> locations_array__ = 
 {" (found before start of program)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 28, column 4 to column 30)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 29, column 4 to column 27)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 30, column 4 to column 34)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 31, column 4 to column 47)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 32, column 4 to column 27)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 33, column 4 to column 41)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 35, column 4 to column 45)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 36, column 4 to column 39)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 38, column 4 to column 26)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 39, column 4 to column 28)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 40, column 4 to column 30)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 44, column 4 to column 44)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 45, column 4 to column 46)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 53, column 4 to column 47)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 48, column 12 to column 68)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 49, column 12 to column 74)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 47, column 31 to line 50, column 9)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 47, column 8 to line 50, column 9)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 46, column 27 to line 51, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 46, column 4 to line 51, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 56, column 8 to column 19)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 59, column 17 to column 29)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 59, column 10 to column 54)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 60, column 10 to column 40)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 61, column 10 to column 41)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 57, column 32 to line 62, column 9)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 57, column 8 to line 62, column 9)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 63, column 8 to column 29)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 55, column 28 to line 64, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 55, column 6 to line 64, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 54, column 26 to line 65, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 54, column 4 to line 65, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 114, column 4 to column 55)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 116, column 4 to column 67)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 117, column 4 to column 103)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 118, column 4 to column 113)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 119, column 4 to column 83)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 120, column 4 to column 93)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 121, column 4 to column 78)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 124, column 4 to column 58)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 127, column 8 to column 69)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 126, column 29 to line 128, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 126, column 6 to line 128, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 125, column 35 to line 129, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 125, column 4 to line 129, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 132, column 4 to column 56)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 135, column 8 to column 65)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 134, column 29 to line 136, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 134, column 6 to line 136, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 133, column 35 to line 137, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 133, column 4 to line 137, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 140, column 4 to column 51)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 141, column 4 to column 43)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 144, column 4 to column 49)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 145, column 4 to column 39)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 150, column 8 to column 186)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 149, column 37 to line 151, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 149, column 6 to line 151, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 148, column 32 to line 152, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 148, column 4 to line 152, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 155, column 4 to column 58)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 158, column 8 to column 19)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 161, column 17 to column 29)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 161, column 10 to column 54)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 162, column 10 to column 40)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 163, column 10 to column 46)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 159, column 32 to line 164, column 9)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 159, column 8 to line 164, column 9)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 165, column 8 to column 32)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 157, column 28 to line 166, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 157, column 6 to line 166, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 156, column 34 to line 167, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 156, column 4 to line 167, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 170, column 4 to column 66)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 173, column 8 to column 19)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 176, column 17 to column 29)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 176, column 10 to column 54)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 177, column 10 to column 40)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 178, column 10 to column 54)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 174, column 32 to line 179, column 9)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 174, column 8 to line 179, column 9)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 180, column 8 to column 32)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 172, column 36 to line 181, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 172, column 6 to line 181, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 171, column 34 to line 182, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 171, column 4 to line 182, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 188, column 10 to column 77)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 187, column 33 to line 189, column 9)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 187, column 8 to line 189, column 9)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 186, column 34 to line 190, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 186, column 6 to line 190, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 185, column 32 to line 191, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 185, column 4 to line 191, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 196, column 10 to column 214)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 195, column 33 to line 197, column 9)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 195, column 8 to line 197, column 9)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 194, column 34 to line 198, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 194, column 6 to line 198, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 193, column 32 to line 199, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 193, column 4 to line 199, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 203, column 6 to column 68)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 205, column 8 to column 177)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 204, column 45 to line 206, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 204, column 6 to line 206, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 202, column 32 to line 207, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 202, column 4 to line 207, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 211, column 8 to column 62)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 213, column 10 to column 100)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 214, column 10 to column 111)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 215, column 10 to column 185)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 216, column 10 to column 36)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 217, column 10 to column 67)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 212, column 47 to line 218, column 9)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 212, column 8 to line 218, column 9)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 210, column 37 to line 219, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 210, column 6 to line 219, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 209, column 32 to line 220, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 209, column 4 to line 220, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 226, column 10 to column 106)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 225, column 39 to line 227, column 9)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 225, column 8 to line 227, column 9)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 224, column 34 to line 228, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 224, column 6 to line 228, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 223, column 32 to line 229, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 223, column 4 to line 229, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 69, column 11 to column 21)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 69, column 4 to column 55)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 70, column 4 to column 22)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 71, column 4 to column 23)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 72, column 4 to column 25)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 73, column 4 to column 26)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 74, column 4 to column 28)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 75, column 4 to column 30)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 76, column 4 to column 22)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 80, column 8 to column 35)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 79, column 21 to line 81, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 79, column 6 to line 81, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 78, column 30 to line 82, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 78, column 4 to line 82, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 92, column 10 to column 62)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 91, column 33 to line 93, column 9)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 91, column 8 to line 93, column 9)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 90, column 26 to line 94, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 90, column 6 to line 94, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 89, column 24 to line 95, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 89, column 4 to line 95, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 99, column 8 to column 60)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 98, column 26 to line 100, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 98, column 6 to line 100, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 97, column 24 to line 101, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 97, column 4 to line 101, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 103, column 6 to column 59)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 102, column 24 to line 104, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 102, column 4 to line 104, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 106, column 6 to column 88)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 108, column 8 to column 143)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 107, column 26 to line 109, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 107, column 6 to line 109, column 7)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 105, column 25 to line 110, column 5)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 105, column 4 to line 110, column 5)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 30, column 4 to column 30)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 31, column 4 to column 27)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 32, column 4 to column 34)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 33, column 4 to column 47)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 34, column 4 to column 27)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 35, column 4 to column 41)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 37, column 4 to column 26)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 38, column 4 to column 28)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 39, column 4 to column 30)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 43, column 4 to column 44)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 44, column 4 to column 46)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 47, column 12 to column 68)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 48, column 12 to column 74)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 46, column 31 to line 49, column 9)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 46, column 8 to line 49, column 9)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 45, column 27 to line 50, column 5)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 45, column 4 to line 50, column 5)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 82, column 4 to column 55)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 84, column 4 to column 67)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 85, column 4 to column 83)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 86, column 4 to column 93)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 87, column 4 to column 78)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 90, column 4 to column 58)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 93, column 8 to column 69)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 92, column 29 to line 94, column 7)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 92, column 6 to line 94, column 7)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 91, column 35 to line 95, column 5)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 91, column 4 to line 95, column 5)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 98, column 4 to column 56)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 101, column 8 to column 65)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 100, column 29 to line 102, column 7)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 100, column 6 to line 102, column 7)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 99, column 35 to line 103, column 5)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 99, column 4 to line 103, column 5)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 106, column 4 to column 51)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 107, column 4 to column 43)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 110, column 4 to column 49)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 111, column 4 to column 39)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 116, column 8 to column 186)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 115, column 37 to line 117, column 7)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 115, column 6 to line 117, column 7)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 114, column 32 to line 118, column 5)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 114, column 4 to line 118, column 5)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 122, column 6 to column 68)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 124, column 8 to column 177)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 123, column 45 to line 125, column 7)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 123, column 6 to line 125, column 7)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 121, column 32 to line 126, column 5)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 121, column 4 to line 126, column 5)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 130, column 8 to column 62)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 132, column 10 to column 100)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 133, column 10 to column 111)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 134, column 10 to column 185)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 135, column 10 to column 36)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 136, column 10 to column 67)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 131, column 47 to line 137, column 9)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 131, column 8 to line 137, column 9)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 129, column 37 to line 138, column 7)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 129, column 6 to line 138, column 7)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 128, column 32 to line 139, column 5)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 128, column 4 to line 139, column 5)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 145, column 10 to column 106)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 144, column 39 to line 146, column 9)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 144, column 8 to line 146, column 9)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 143, column 34 to line 147, column 7)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 143, column 6 to line 147, column 7)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 142, column 32 to line 148, column 5)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 142, column 4 to line 148, column 5)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 54, column 11 to column 21)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 54, column 4 to column 55)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 55, column 4 to column 22)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 56, column 4 to column 23)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 57, column 4 to column 25)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 58, column 4 to column 26)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 59, column 4 to column 28)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 60, column 4 to column 30)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 61, column 4 to column 22)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 65, column 8 to column 60)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 64, column 26 to line 66, column 7)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 64, column 6 to line 66, column 7)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 63, column 24 to line 67, column 5)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 63, column 4 to line 67, column 5)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 70, column 6 to column 59)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 69, column 24 to line 71, column 5)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 69, column 4 to line 71, column 5)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 74, column 6 to column 88)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 76, column 8 to column 143)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 75, column 26 to line 77, column 7)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 75, column 6 to line 77, column 7)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 73, column 25 to line 78, column 5)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 73, column 4 to line 78, column 5)",
  " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 3, column 4 to column 25)",
  " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 4, column 4 to column 25)",
  " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 5, column 4 to column 28)",
@@ -197,60 +128,53 @@ static constexpr std::array<const char*, 242> locations_array__ =
  " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 17, column 4 to column 69)",
  " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 18, column 11 to column 26)",
  " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 18, column 4 to column 42)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 20, column 4 to column 20)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 21, column 4 to column 20)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 22, column 4 to column 21)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 23, column 4 to column 33)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 24, column 4 to column 31)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 29, column 10 to column 17)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 30, column 10 to column 22)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 19, column 10 to column 25)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 19, column 26 to column 52)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 19, column 61 to column 71)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 19, column 72 to column 84)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 19, column 4 to column 103)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 20, column 10 to column 25)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 20, column 26 to column 52)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 20, column 61 to column 79)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 20, column 80 to column 92)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 20, column 4 to column 113)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 22, column 4 to column 20)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 23, column 4 to column 20)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 24, column 4 to column 21)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 25, column 4 to column 33)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 26, column 4 to column 31)",
  " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 31, column 10 to column 17)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 31, column 18 to column 25)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 31, column 26 to column 36)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 32, column 10 to column 17)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 32, column 10 to column 22)",
  " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 33, column 10 to column 17)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 33, column 18 to column 28)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 35, column 11 to column 23)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 35, column 25 to column 37)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 36, column 10 to column 22)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 33, column 18 to column 25)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 33, column 26 to column 36)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 34, column 10 to column 17)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 35, column 10 to column 17)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 35, column 18 to column 28)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 43, column 11 to column 21)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 43, column 22 to column 32)",
  " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 44, column 11 to column 21)",
  " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 44, column 22 to column 32)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 45, column 11 to column 21)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 45, column 22 to column 32)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 53, column 11 to column 21)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 53, column 23 to column 33)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 114, column 11 to column 21)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 116, column 10 to column 25)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 116, column 27 to column 45)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 117, column 10 to column 25)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 117, column 26 to column 52)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 117, column 61 to column 71)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 117, column 72 to column 84)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 118, column 10 to column 25)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 118, column 26 to column 52)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 118, column 61 to column 79)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 118, column 80 to column 92)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 119, column 10 to column 25)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 119, column 26 to column 52)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 119, column 53 to column 63)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 120, column 10 to column 25)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 120, column 26 to column 52)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 120, column 53 to column 71)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 121, column 10 to column 25)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 121, column 26 to column 41)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 121, column 42 to column 60)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 124, column 11 to column 29)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 124, column 31 to column 41)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 132, column 11 to column 29)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 132, column 31 to column 41)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 140, column 11 to column 21)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 140, column 23 to column 33)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 144, column 11 to column 21)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 144, column 23 to column 33)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 155, column 11 to column 29)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 155, column 31 to column 41)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 170, column 11 to column 29)",
- " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 170, column 31 to column 49)"};
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 82, column 11 to column 21)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 84, column 10 to column 25)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 84, column 27 to column 45)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 85, column 10 to column 25)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 85, column 26 to column 52)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 85, column 53 to column 63)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 86, column 10 to column 25)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 86, column 26 to column 52)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 86, column 53 to column 71)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 87, column 10 to column 25)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 87, column 26 to column 41)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 87, column 42 to column 60)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 90, column 11 to column 29)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 90, column 31 to column 41)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 98, column 11 to column 29)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 98, column 31 to column 41)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 106, column 11 to column 21)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 106, column 23 to column 33)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 110, column 11 to column 21)",
+ " (in 'C:/Users/nb23N/Documents/Bayesian_Project_A1/Bayesian_Project_A1/stan/spt_lm.stan', line 110, column 23 to column 33)"};
 
 
 
@@ -271,13 +195,13 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
   Eigen::Matrix<double, -1, -1> dist_pred_data__;
   Eigen::Matrix<double, -1, -1> dist_pred_to_pred_data__;
   Eigen::Matrix<double, -1, 1> weeks_to_pred_data__;
+  std::vector<std::vector<Eigen::Matrix<double, -1, -1>>> delta_pred_sim_t;
+  std::vector<std::vector<Eigen::Matrix<double, -1, -1>>> delta_pred_sim_s_t;
   double a;
   double b;
   double s0;
   double phi_gamma_esti;
   double phi_eta_esti;
-  int delta_pred_sim_t_2dim__;
-  int delta_pred_sim_s_t_2dim__;
   int o_pred_sim_t_2dim__;
   int o_pred_sim_s_t_2dim__; 
   Eigen::Map<Eigen::Matrix<double, -1, -1>> dist{nullptr, 0, 0};
@@ -310,88 +234,88 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
     try {
       int pos__ = std::numeric_limits<int>::min();
       pos__ = 1;
-      current_statement__ = 161;
+      current_statement__ = 92;
       context__.validate_dims("data initialization","N_years","int",
            std::vector<size_t>{});
       N_years = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 161;
+      current_statement__ = 92;
       N_years = context__.vals_i("N_years")[(1 - 1)];
-      current_statement__ = 161;
+      current_statement__ = 92;
       stan::math::check_greater_or_equal(function__, "N_years", N_years, 0);
-      current_statement__ = 162;
+      current_statement__ = 93;
       context__.validate_dims("data initialization","N_weeks","int",
            std::vector<size_t>{});
       N_weeks = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 162;
+      current_statement__ = 93;
       N_weeks = context__.vals_i("N_weeks")[(1 - 1)];
-      current_statement__ = 162;
+      current_statement__ = 93;
       stan::math::check_greater_or_equal(function__, "N_weeks", N_weeks, 0);
-      current_statement__ = 163;
+      current_statement__ = 94;
       context__.validate_dims("data initialization","N_stations","int",
            std::vector<size_t>{});
       N_stations = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 163;
+      current_statement__ = 94;
       N_stations = context__.vals_i("N_stations")[(1 - 1)];
-      current_statement__ = 163;
+      current_statement__ = 94;
       stan::math::check_greater_or_equal(function__, "N_stations",
                                             N_stations, 0);
-      current_statement__ = 164;
+      current_statement__ = 95;
       context__.validate_dims("data initialization","N_covariates","int",
            std::vector<size_t>{});
       N_covariates = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 164;
+      current_statement__ = 95;
       N_covariates = context__.vals_i("N_covariates")[(1 - 1)];
-      current_statement__ = 164;
+      current_statement__ = 95;
       stan::math::check_greater_or_equal(function__, "N_covariates",
                                             N_covariates, 0);
-      current_statement__ = 165;
+      current_statement__ = 96;
       context__.validate_dims("data initialization","N_years_to_pred","int",
            std::vector<size_t>{});
       N_years_to_pred = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 165;
+      current_statement__ = 96;
       N_years_to_pred = context__.vals_i("N_years_to_pred")[(1 - 1)];
-      current_statement__ = 165;
+      current_statement__ = 96;
       stan::math::check_greater_or_equal(function__, "N_years_to_pred",
                                             N_years_to_pred, 0);
-      current_statement__ = 166;
+      current_statement__ = 97;
       context__.validate_dims("data initialization","N_weeks_to_pred","int",
            std::vector<size_t>{});
       N_weeks_to_pred = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 166;
+      current_statement__ = 97;
       N_weeks_to_pred = context__.vals_i("N_weeks_to_pred")[(1 - 1)];
-      current_statement__ = 166;
+      current_statement__ = 97;
       stan::math::check_greater_or_equal(function__, "N_weeks_to_pred",
                                             N_weeks_to_pred, 0);
-      current_statement__ = 167;
+      current_statement__ = 98;
       context__.validate_dims("data initialization","N_stations_to_pred",
           "int", std::vector<size_t>{});
       N_stations_to_pred = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 167;
+      current_statement__ = 98;
       N_stations_to_pred = context__.vals_i("N_stations_to_pred")[(1 - 1)];
-      current_statement__ = 167;
+      current_statement__ = 98;
       stan::math::check_greater_or_equal(function__, "N_stations_to_pred",
                                             N_stations_to_pred, 0);
-      current_statement__ = 168;
+      current_statement__ = 99;
       stan::math::validate_non_negative_index("y", "N_years", N_years);
-      current_statement__ = 169;
+      current_statement__ = 100;
       stan::math::validate_non_negative_index("y", "N_weeks", N_weeks);
-      current_statement__ = 170;
+      current_statement__ = 101;
       stan::math::validate_non_negative_index("y", "N_stations", N_stations);
-      current_statement__ = 171;
+      current_statement__ = 102;
       context__.validate_dims("data initialization","y","double",
            std::vector<size_t>{static_cast<size_t>(N_years),
             static_cast<size_t>(N_weeks), static_cast<size_t>(N_stations)});
@@ -404,38 +328,38 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
       
       {
         std::vector<local_scalar_t__> y_flat__;
-        current_statement__ = 171;
+        current_statement__ = 102;
         y_flat__ = context__.vals_r("y");
-        current_statement__ = 171;
+        current_statement__ = 102;
         pos__ = 1;
-        current_statement__ = 171;
+        current_statement__ = 102;
         for (int sym1__ = 1; sym1__ <= N_stations; ++sym1__) {
-          current_statement__ = 171;
+          current_statement__ = 102;
           for (int sym2__ = 1; sym2__ <= N_weeks; ++sym2__) {
-            current_statement__ = 171;
+            current_statement__ = 102;
             for (int sym3__ = 1; sym3__ <= N_years; ++sym3__) {
-              current_statement__ = 171;
+              current_statement__ = 102;
               stan::model::assign(y, y_flat__[(pos__ - 1)],
                 "assigning variable y", stan::model::index_uni(sym3__),
                                           stan::model::index_uni(sym2__),
                                           stan::model::index_uni(sym1__));
-              current_statement__ = 171;
+              current_statement__ = 102;
               pos__ = (pos__ + 1);
             }
           }
         }
       }
-      current_statement__ = 172;
+      current_statement__ = 103;
       stan::math::validate_non_negative_index("delta", "N_years", N_years);
-      current_statement__ = 173;
+      current_statement__ = 104;
       stan::math::validate_non_negative_index("delta", "N_weeks", N_weeks);
-      current_statement__ = 174;
+      current_statement__ = 105;
       stan::math::validate_non_negative_index("delta", "N_stations",
                                               N_stations);
-      current_statement__ = 175;
+      current_statement__ = 106;
       stan::math::validate_non_negative_index("delta", "N_covariates",
                                               N_covariates);
-      current_statement__ = 176;
+      current_statement__ = 107;
       context__.validate_dims("data initialization","delta","double",
            std::vector<size_t>{static_cast<size_t>(N_years),
             static_cast<size_t>(N_weeks), static_cast<size_t>(N_stations),
@@ -449,38 +373,38 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
       
       {
         std::vector<local_scalar_t__> delta_flat__;
-        current_statement__ = 176;
+        current_statement__ = 107;
         delta_flat__ = context__.vals_r("delta");
-        current_statement__ = 176;
+        current_statement__ = 107;
         pos__ = 1;
-        current_statement__ = 176;
+        current_statement__ = 107;
         for (int sym1__ = 1; sym1__ <= N_covariates; ++sym1__) {
-          current_statement__ = 176;
+          current_statement__ = 107;
           for (int sym2__ = 1; sym2__ <= N_stations; ++sym2__) {
-            current_statement__ = 176;
+            current_statement__ = 107;
             for (int sym3__ = 1; sym3__ <= N_weeks; ++sym3__) {
-              current_statement__ = 176;
+              current_statement__ = 107;
               for (int sym4__ = 1; sym4__ <= N_years; ++sym4__) {
-                current_statement__ = 176;
+                current_statement__ = 107;
                 stan::model::assign(delta, delta_flat__[(pos__ - 1)],
                   "assigning variable delta", stan::model::index_uni(sym4__),
                                                 stan::model::index_uni(sym3__),
                                                 stan::model::index_uni(sym2__),
                                                 stan::model::index_uni(sym1__));
-                current_statement__ = 176;
+                current_statement__ = 107;
                 pos__ = (pos__ + 1);
               }
             }
           }
         }
       }
-      current_statement__ = 177;
+      current_statement__ = 108;
       stan::math::validate_non_negative_index("dist", "N_stations",
                                               N_stations);
-      current_statement__ = 178;
+      current_statement__ = 109;
       stan::math::validate_non_negative_index("dist", "N_stations",
                                               N_stations);
-      current_statement__ = 179;
+      current_statement__ = 110;
       context__.validate_dims("data initialization","dist","double",
            std::vector<size_t>{static_cast<size_t>(N_stations),
             static_cast<size_t>(N_stations)});
@@ -492,31 +416,31 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
       
       {
         std::vector<local_scalar_t__> dist_flat__;
-        current_statement__ = 179;
+        current_statement__ = 110;
         dist_flat__ = context__.vals_r("dist");
-        current_statement__ = 179;
+        current_statement__ = 110;
         pos__ = 1;
-        current_statement__ = 179;
+        current_statement__ = 110;
         for (int sym1__ = 1; sym1__ <= N_stations; ++sym1__) {
-          current_statement__ = 179;
+          current_statement__ = 110;
           for (int sym2__ = 1; sym2__ <= N_stations; ++sym2__) {
-            current_statement__ = 179;
+            current_statement__ = 110;
             stan::model::assign(dist, dist_flat__[(pos__ - 1)],
               "assigning variable dist", stan::model::index_uni(sym2__),
                                            stan::model::index_uni(sym1__));
-            current_statement__ = 179;
+            current_statement__ = 110;
             pos__ = (pos__ + 1);
           }
         }
       }
-      current_statement__ = 180;
+      current_statement__ = 111;
       stan::math::validate_non_negative_index("dist_pred",
                                               "N_stations_to_pred",
                                               N_stations_to_pred);
-      current_statement__ = 181;
+      current_statement__ = 112;
       stan::math::validate_non_negative_index("dist_pred", "N_stations",
                                               N_stations);
-      current_statement__ = 182;
+      current_statement__ = 113;
       context__.validate_dims("data initialization","dist_pred","double",
            std::vector<size_t>{static_cast<size_t>(N_stations_to_pred),
             static_cast<size_t>(N_stations)});
@@ -528,32 +452,32 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
       
       {
         std::vector<local_scalar_t__> dist_pred_flat__;
-        current_statement__ = 182;
+        current_statement__ = 113;
         dist_pred_flat__ = context__.vals_r("dist_pred");
-        current_statement__ = 182;
+        current_statement__ = 113;
         pos__ = 1;
-        current_statement__ = 182;
+        current_statement__ = 113;
         for (int sym1__ = 1; sym1__ <= N_stations; ++sym1__) {
-          current_statement__ = 182;
+          current_statement__ = 113;
           for (int sym2__ = 1; sym2__ <= N_stations_to_pred; ++sym2__) {
-            current_statement__ = 182;
+            current_statement__ = 113;
             stan::model::assign(dist_pred, dist_pred_flat__[(pos__ - 1)],
               "assigning variable dist_pred", stan::model::index_uni(sym2__),
                                                 stan::model::index_uni(sym1__));
-            current_statement__ = 182;
+            current_statement__ = 113;
             pos__ = (pos__ + 1);
           }
         }
       }
-      current_statement__ = 183;
+      current_statement__ = 114;
       stan::math::validate_non_negative_index("dist_pred_to_pred",
                                               "N_stations_to_pred",
                                               N_stations_to_pred);
-      current_statement__ = 184;
+      current_statement__ = 115;
       stan::math::validate_non_negative_index("dist_pred_to_pred",
                                               "N_stations_to_pred",
                                               N_stations_to_pred);
-      current_statement__ = 185;
+      current_statement__ = 116;
       context__.validate_dims("data initialization","dist_pred_to_pred",
           "double",
            std::vector<size_t>{static_cast<size_t>(N_stations_to_pred),
@@ -566,29 +490,29 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
       
       {
         std::vector<local_scalar_t__> dist_pred_to_pred_flat__;
-        current_statement__ = 185;
+        current_statement__ = 116;
         dist_pred_to_pred_flat__ = context__.vals_r("dist_pred_to_pred");
-        current_statement__ = 185;
+        current_statement__ = 116;
         pos__ = 1;
-        current_statement__ = 185;
+        current_statement__ = 116;
         for (int sym1__ = 1; sym1__ <= N_stations_to_pred; ++sym1__) {
-          current_statement__ = 185;
+          current_statement__ = 116;
           for (int sym2__ = 1; sym2__ <= N_stations_to_pred; ++sym2__) {
-            current_statement__ = 185;
+            current_statement__ = 116;
             stan::model::assign(dist_pred_to_pred,
               dist_pred_to_pred_flat__[(pos__ - 1)],
               "assigning variable dist_pred_to_pred", stan::model::index_uni(sym2__),
                                                         stan::model::index_uni(sym1__));
-            current_statement__ = 185;
+            current_statement__ = 116;
             pos__ = (pos__ + 1);
           }
         }
       }
-      current_statement__ = 186;
+      current_statement__ = 117;
       stan::math::validate_non_negative_index("weeks_to_pred",
                                               "N_weeks_to_pred",
                                               N_weeks_to_pred);
-      current_statement__ = 187;
+      current_statement__ = 118;
       context__.validate_dims("data initialization","weeks_to_pred","double",
            std::vector<size_t>{static_cast<size_t>(N_weeks_to_pred)});
       weeks_to_pred_data__ = 
@@ -599,267 +523,321 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
       
       {
         std::vector<local_scalar_t__> weeks_to_pred_flat__;
-        current_statement__ = 187;
+        current_statement__ = 118;
         weeks_to_pred_flat__ = context__.vals_r("weeks_to_pred");
-        current_statement__ = 187;
+        current_statement__ = 118;
         pos__ = 1;
-        current_statement__ = 187;
+        current_statement__ = 118;
         for (int sym1__ = 1; sym1__ <= N_weeks_to_pred; ++sym1__) {
-          current_statement__ = 187;
+          current_statement__ = 118;
           stan::model::assign(weeks_to_pred,
             weeks_to_pred_flat__[(pos__ - 1)],
             "assigning variable weeks_to_pred", stan::model::index_uni(sym1__));
-          current_statement__ = 187;
+          current_statement__ = 118;
           pos__ = (pos__ + 1);
         }
       }
-      current_statement__ = 188;
+      current_statement__ = 119;
+      stan::math::validate_non_negative_index("delta_pred_sim_t",
+                                              "N_years_to_pred",
+                                              N_years_to_pred);
+      current_statement__ = 120;
+      stan::math::validate_non_negative_index("delta_pred_sim_t",
+                                              "to_int(max(weeks_to_pred))",
+                                              stan::math::to_int(
+                                                stan::math::max(
+                                                  weeks_to_pred)));
+      current_statement__ = 121;
+      stan::math::validate_non_negative_index("delta_pred_sim_t",
+                                              "N_stations", N_stations);
+      current_statement__ = 122;
+      stan::math::validate_non_negative_index("delta_pred_sim_t",
+                                              "N_covariates", N_covariates);
+      current_statement__ = 123;
+      context__.validate_dims("data initialization","delta_pred_sim_t",
+          "double",
+           std::vector<size_t>{static_cast<size_t>(N_years_to_pred),
+            static_cast<size_t>(stan::math::to_int(
+                                  stan::math::max(weeks_to_pred))),
+            static_cast<size_t>(N_stations),
+            static_cast<size_t>(N_covariates)});
+      delta_pred_sim_t = 
+        std::vector<std::vector<Eigen::Matrix<double, -1, -1>>>(
+          N_years_to_pred, 
+          std::vector<Eigen::Matrix<double, -1, -1>>(
+            stan::math::to_int(stan::math::max(weeks_to_pred)), 
+            Eigen::Matrix<double, -1, -1>::Constant(N_stations, N_covariates,
+              std::numeric_limits<double>::quiet_NaN())));
+      
+      
+      {
+        std::vector<local_scalar_t__> delta_pred_sim_t_flat__;
+        current_statement__ = 123;
+        delta_pred_sim_t_flat__ = context__.vals_r("delta_pred_sim_t");
+        current_statement__ = 123;
+        pos__ = 1;
+        current_statement__ = 123;
+        for (int sym1__ = 1; sym1__ <= N_covariates; ++sym1__) {
+          current_statement__ = 123;
+          for (int sym2__ = 1; sym2__ <= N_stations; ++sym2__) {
+            current_statement__ = 123;
+            for (int sym3__ = 1;
+                 sym3__ <= stan::math::to_int(stan::math::max(weeks_to_pred));
+                 ++sym3__) {
+              current_statement__ = 123;
+              for (int sym4__ = 1; sym4__ <= N_years_to_pred; ++sym4__) {
+                current_statement__ = 123;
+                stan::model::assign(delta_pred_sim_t,
+                  delta_pred_sim_t_flat__[(pos__ - 1)],
+                  "assigning variable delta_pred_sim_t", stan::model::index_uni(sym4__),
+                                                           stan::model::index_uni(sym3__),
+                                                           stan::model::index_uni(sym2__),
+                                                           stan::model::index_uni(sym1__));
+                current_statement__ = 123;
+                pos__ = (pos__ + 1);
+              }
+            }
+          }
+        }
+      }
+      current_statement__ = 124;
+      stan::math::validate_non_negative_index("delta_pred_sim_s_t",
+                                              "N_years_to_pred",
+                                              N_years_to_pred);
+      current_statement__ = 125;
+      stan::math::validate_non_negative_index("delta_pred_sim_s_t",
+                                              "to_int(max(weeks_to_pred))",
+                                              stan::math::to_int(
+                                                stan::math::max(
+                                                  weeks_to_pred)));
+      current_statement__ = 126;
+      stan::math::validate_non_negative_index("delta_pred_sim_s_t",
+                                              "N_stations_to_pred",
+                                              N_stations_to_pred);
+      current_statement__ = 127;
+      stan::math::validate_non_negative_index("delta_pred_sim_s_t",
+                                              "N_covariates", N_covariates);
+      current_statement__ = 128;
+      context__.validate_dims("data initialization","delta_pred_sim_s_t",
+          "double",
+           std::vector<size_t>{static_cast<size_t>(N_years_to_pred),
+            static_cast<size_t>(stan::math::to_int(
+                                  stan::math::max(weeks_to_pred))),
+            static_cast<size_t>(N_stations_to_pred),
+            static_cast<size_t>(N_covariates)});
+      delta_pred_sim_s_t = 
+        std::vector<std::vector<Eigen::Matrix<double, -1, -1>>>(
+          N_years_to_pred, 
+          std::vector<Eigen::Matrix<double, -1, -1>>(
+            stan::math::to_int(stan::math::max(weeks_to_pred)), 
+            Eigen::Matrix<double, -1, -1>::Constant(N_stations_to_pred,
+              N_covariates, std::numeric_limits<double>::quiet_NaN())));
+      
+      
+      {
+        std::vector<local_scalar_t__> delta_pred_sim_s_t_flat__;
+        current_statement__ = 128;
+        delta_pred_sim_s_t_flat__ = context__.vals_r("delta_pred_sim_s_t");
+        current_statement__ = 128;
+        pos__ = 1;
+        current_statement__ = 128;
+        for (int sym1__ = 1; sym1__ <= N_covariates; ++sym1__) {
+          current_statement__ = 128;
+          for (int sym2__ = 1; sym2__ <= N_stations_to_pred; ++sym2__) {
+            current_statement__ = 128;
+            for (int sym3__ = 1;
+                 sym3__ <= stan::math::to_int(stan::math::max(weeks_to_pred));
+                 ++sym3__) {
+              current_statement__ = 128;
+              for (int sym4__ = 1; sym4__ <= N_years_to_pred; ++sym4__) {
+                current_statement__ = 128;
+                stan::model::assign(delta_pred_sim_s_t,
+                  delta_pred_sim_s_t_flat__[(pos__ - 1)],
+                  "assigning variable delta_pred_sim_s_t", stan::model::index_uni(sym4__),
+                                                             stan::model::index_uni(sym3__),
+                                                             stan::model::index_uni(sym2__),
+                                                             stan::model::index_uni(sym1__));
+                current_statement__ = 128;
+                pos__ = (pos__ + 1);
+              }
+            }
+          }
+        }
+      }
+      current_statement__ = 129;
       context__.validate_dims("data initialization","a","double",
            std::vector<size_t>{});
       a = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 188;
+      current_statement__ = 129;
       a = context__.vals_r("a")[(1 - 1)];
-      current_statement__ = 188;
+      current_statement__ = 129;
       stan::math::check_greater_or_equal(function__, "a", a, 0);
-      current_statement__ = 189;
+      current_statement__ = 130;
       context__.validate_dims("data initialization","b","double",
            std::vector<size_t>{});
       b = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 189;
+      current_statement__ = 130;
       b = context__.vals_r("b")[(1 - 1)];
-      current_statement__ = 189;
+      current_statement__ = 130;
       stan::math::check_greater_or_equal(function__, "b", b, 0);
-      current_statement__ = 190;
+      current_statement__ = 131;
       context__.validate_dims("data initialization","s0","double",
            std::vector<size_t>{});
       s0 = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 190;
+      current_statement__ = 131;
       s0 = context__.vals_r("s0")[(1 - 1)];
-      current_statement__ = 190;
+      current_statement__ = 131;
       stan::math::check_greater_or_equal(function__, "s0", s0, 0);
-      current_statement__ = 191;
+      current_statement__ = 132;
       context__.validate_dims("data initialization","phi_gamma_esti",
           "double", std::vector<size_t>{});
       phi_gamma_esti = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 191;
+      current_statement__ = 132;
       phi_gamma_esti = context__.vals_r("phi_gamma_esti")[(1 - 1)];
-      current_statement__ = 191;
+      current_statement__ = 132;
       stan::math::check_greater_or_equal(function__, "phi_gamma_esti",
                                             phi_gamma_esti, 0);
-      current_statement__ = 192;
+      current_statement__ = 133;
       context__.validate_dims("data initialization","phi_eta_esti","double",
            std::vector<size_t>{});
       phi_eta_esti = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 192;
+      current_statement__ = 133;
       phi_eta_esti = context__.vals_r("phi_eta_esti")[(1 - 1)];
-      current_statement__ = 192;
+      current_statement__ = 133;
       stan::math::check_greater_or_equal(function__, "phi_eta_esti",
                                             phi_eta_esti, 0);
-      current_statement__ = 193;
+      current_statement__ = 134;
       stan::math::validate_non_negative_index("xi", "N_years", N_years);
-      current_statement__ = 194;
+      current_statement__ = 135;
       stan::math::validate_non_negative_index("beta", "N_covariates",
                                               N_covariates);
-      current_statement__ = 195;
+      current_statement__ = 136;
       stan::math::validate_non_negative_index("eta", "N_years", N_years);
-      current_statement__ = 196;
+      current_statement__ = 137;
       stan::math::validate_non_negative_index("eta", "N_weeks", N_weeks);
-      current_statement__ = 197;
+      current_statement__ = 138;
       stan::math::validate_non_negative_index("eta", "N_stations", N_stations);
-      current_statement__ = 198;
+      current_statement__ = 139;
       stan::math::validate_non_negative_index("mu", "N_years", N_years);
-      current_statement__ = 199;
+      current_statement__ = 140;
       stan::math::validate_non_negative_index("gamma", "N_years", N_years);
-      current_statement__ = 200;
+      current_statement__ = 141;
       stan::math::validate_non_negative_index("gamma", "N_stations",
                                               N_stations);
-      current_statement__ = 201;
-      stan::math::validate_non_negative_index("A_raw", "N_covariates",
-                                              N_covariates);
-      current_statement__ = 202;
-      stan::math::validate_non_negative_index("A_raw", "N_covariates",
-                                              N_covariates);
-      current_statement__ = 203;
-      stan::math::validate_non_negative_index("phi_delta", "N_covariates",
-                                              N_covariates);
-      current_statement__ = 204;
+      current_statement__ = 142;
       stan::math::validate_non_negative_index("Sigma_eta", "N_stations",
                                               N_stations);
-      current_statement__ = 205;
+      current_statement__ = 143;
       stan::math::validate_non_negative_index("Sigma_eta", "N_stations",
                                               N_stations);
-      current_statement__ = 206;
+      current_statement__ = 144;
       stan::math::validate_non_negative_index("Sigma_gamma", "N_stations",
                                               N_stations);
-      current_statement__ = 207;
+      current_statement__ = 145;
       stan::math::validate_non_negative_index("Sigma_gamma", "N_stations",
                                               N_stations);
-      current_statement__ = 208;
-      stan::math::validate_non_negative_index("Sigma_delta", "N_stations",
-                                              N_stations);
-      current_statement__ = 209;
-      stan::math::validate_non_negative_index("Sigma_delta", "N_stations",
-                                              N_stations);
-      current_statement__ = 210;
+      current_statement__ = 146;
       stan::math::validate_non_negative_index("zero", "N_stations",
                                               N_stations);
-      current_statement__ = 211;
+      current_statement__ = 147;
       stan::math::validate_non_negative_index("gamma_pred_sim",
                                               "N_years_to_pred",
                                               N_years_to_pred);
-      current_statement__ = 212;
+      current_statement__ = 148;
       stan::math::validate_non_negative_index("gamma_pred_sim",
                                               "N_stations_to_pred",
                                               N_stations_to_pred);
-      current_statement__ = 213;
-      stan::math::validate_non_negative_index("delta_pred_sim_t",
-                                              "N_years_to_pred",
-                                              N_years_to_pred);
-      current_statement__ = 214;
-      delta_pred_sim_t_2dim__ = std::numeric_limits<int>::min();
-      
-      
-      current_statement__ = 214;
-      delta_pred_sim_t_2dim__ = stan::math::to_int(
-                                  stan::math::max(weeks_to_pred));
-      current_statement__ = 214;
-      stan::math::validate_non_negative_index("delta_pred_sim_t",
-                                              "to_int(max(weeks_to_pred))",
-                                              delta_pred_sim_t_2dim__);
-      current_statement__ = 215;
-      stan::math::validate_non_negative_index("delta_pred_sim_t",
-                                              "N_stations", N_stations);
-      current_statement__ = 216;
-      stan::math::validate_non_negative_index("delta_pred_sim_t",
-                                              "N_covariates", N_covariates);
-      current_statement__ = 217;
-      stan::math::validate_non_negative_index("delta_pred_sim_s_t",
-                                              "N_years_to_pred",
-                                              N_years_to_pred);
-      current_statement__ = 218;
-      delta_pred_sim_s_t_2dim__ = std::numeric_limits<int>::min();
-      
-      
-      current_statement__ = 218;
-      delta_pred_sim_s_t_2dim__ = stan::math::to_int(
-                                    stan::math::max(weeks_to_pred));
-      current_statement__ = 218;
-      stan::math::validate_non_negative_index("delta_pred_sim_s_t",
-                                              "to_int(max(weeks_to_pred))",
-                                              delta_pred_sim_s_t_2dim__);
-      current_statement__ = 219;
-      stan::math::validate_non_negative_index("delta_pred_sim_s_t",
-                                              "N_stations_to_pred",
-                                              N_stations_to_pred);
-      current_statement__ = 220;
-      stan::math::validate_non_negative_index("delta_pred_sim_s_t",
-                                              "N_covariates", N_covariates);
-      current_statement__ = 221;
+      current_statement__ = 149;
       stan::math::validate_non_negative_index("o_pred_sim_t",
                                               "N_years_to_pred",
                                               N_years_to_pred);
-      current_statement__ = 222;
+      current_statement__ = 150;
       o_pred_sim_t_2dim__ = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 222;
+      current_statement__ = 150;
       o_pred_sim_t_2dim__ = stan::math::to_int(
                               stan::math::max(weeks_to_pred));
-      current_statement__ = 222;
+      current_statement__ = 150;
       stan::math::validate_non_negative_index("o_pred_sim_t",
                                               "to_int(max(weeks_to_pred))",
                                               o_pred_sim_t_2dim__);
-      current_statement__ = 223;
+      current_statement__ = 151;
       stan::math::validate_non_negative_index("o_pred_sim_t", "N_stations",
                                               N_stations);
-      current_statement__ = 224;
+      current_statement__ = 152;
       stan::math::validate_non_negative_index("o_pred_sim_s_t",
                                               "N_years_to_pred",
                                               N_years_to_pred);
-      current_statement__ = 225;
+      current_statement__ = 153;
       o_pred_sim_s_t_2dim__ = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 225;
+      current_statement__ = 153;
       o_pred_sim_s_t_2dim__ = stan::math::to_int(
                                 stan::math::max(weeks_to_pred));
-      current_statement__ = 225;
+      current_statement__ = 153;
       stan::math::validate_non_negative_index("o_pred_sim_s_t",
                                               "to_int(max(weeks_to_pred))",
                                               o_pred_sim_s_t_2dim__);
-      current_statement__ = 226;
+      current_statement__ = 154;
       stan::math::validate_non_negative_index("o_pred_sim_s_t",
                                               "N_stations_to_pred",
                                               N_stations_to_pred);
-      current_statement__ = 227;
+      current_statement__ = 155;
       stan::math::validate_non_negative_index("y_pred_sim",
                                               "N_years_to_pred",
                                               N_years_to_pred);
-      current_statement__ = 228;
+      current_statement__ = 156;
       stan::math::validate_non_negative_index("y_pred_sim",
                                               "N_weeks_to_pred",
                                               N_weeks_to_pred);
-      current_statement__ = 229;
+      current_statement__ = 157;
       stan::math::validate_non_negative_index("y_pred_sim",
                                               "N_stations_to_pred",
                                               N_stations_to_pred);
-      current_statement__ = 230;
+      current_statement__ = 158;
       stan::math::validate_non_negative_index("Sigma_gamma_12",
                                               "N_stations_to_pred",
                                               N_stations_to_pred);
-      current_statement__ = 231;
+      current_statement__ = 159;
       stan::math::validate_non_negative_index("Sigma_gamma_12", "N_stations",
                                               N_stations);
-      current_statement__ = 232;
+      current_statement__ = 160;
       stan::math::validate_non_negative_index("Sigma_eta_12",
                                               "N_stations_to_pred",
                                               N_stations_to_pred);
-      current_statement__ = 233;
+      current_statement__ = 161;
       stan::math::validate_non_negative_index("Sigma_eta_12", "N_stations",
                                               N_stations);
-      current_statement__ = 234;
+      current_statement__ = 162;
       stan::math::validate_non_negative_index("Sigma_gamma_inv",
                                               "N_stations", N_stations);
-      current_statement__ = 235;
+      current_statement__ = 163;
       stan::math::validate_non_negative_index("Sigma_gamma_inv",
                                               "N_stations", N_stations);
-      current_statement__ = 236;
+      current_statement__ = 164;
       stan::math::validate_non_negative_index("Sigma_eta_inv", "N_stations",
                                               N_stations);
-      current_statement__ = 237;
+      current_statement__ = 165;
       stan::math::validate_non_negative_index("Sigma_eta_inv", "N_stations",
                                               N_stations);
-      current_statement__ = 238;
-      stan::math::validate_non_negative_index("Sigma_delta_12",
-                                              "N_stations_to_pred",
-                                              N_stations_to_pred);
-      current_statement__ = 239;
-      stan::math::validate_non_negative_index("Sigma_delta_12", "N_stations",
-                                              N_stations);
-      current_statement__ = 240;
-      stan::math::validate_non_negative_index("Sigma_delta_11",
-                                              "N_stations_to_pred",
-                                              N_stations_to_pred);
-      current_statement__ = 241;
-      stan::math::validate_non_negative_index("Sigma_delta_11",
-                                              "N_stations_to_pred",
-                                              N_stations_to_pred);
     } catch (const std::exception& e) {
       stan::lang::rethrow_located(e, locations_array__[current_statement__]);
     }
     num_params_r__ = 1 + N_years + N_covariates
        + (N_years * N_weeks * N_stations) + N_years + (N_years * N_stations)
-       + (N_covariates * N_covariates) + N_covariates + 1 + 1 + 1;
+       + 1 + 1 + 1;
     
   }
   
@@ -911,27 +889,16 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
       current_statement__ = 6;
       gamma = in__.template read<std::vector<std::vector<local_scalar_t__>>>(
                 N_years, N_stations);
-      Eigen::Matrix<local_scalar_t__, -1, -1> A_raw =
-         Eigen::Matrix<local_scalar_t__, -1, -1>::Constant(N_covariates,
-           N_covariates, DUMMY_VAR__);
-      current_statement__ = 7;
-      A_raw = in__.template read<Eigen::Matrix<local_scalar_t__, -1, -1>>(
-                N_covariates, N_covariates);
-      std::vector<local_scalar_t__> phi_delta =
-         std::vector<local_scalar_t__>(N_covariates, DUMMY_VAR__);
-      current_statement__ = 8;
-      phi_delta = in__.template read<std::vector<local_scalar_t__>>(
-                    N_covariates);
       local_scalar_t__ tau_eta = DUMMY_VAR__;
-      current_statement__ = 9;
+      current_statement__ = 7;
       tau_eta = in__.template read_constrain_lb<local_scalar_t__, 
                   jacobian__>(0, lp__);
       local_scalar_t__ tau_gamma = DUMMY_VAR__;
-      current_statement__ = 10;
+      current_statement__ = 8;
       tau_gamma = in__.template read_constrain_lb<local_scalar_t__, 
                     jacobian__>(0, lp__);
       local_scalar_t__ tau_epsilon = DUMMY_VAR__;
-      current_statement__ = 11;
+      current_statement__ = 9;
       tau_epsilon = in__.template read_constrain_lb<local_scalar_t__, 
                       jacobian__>(0, lp__);
       Eigen::Matrix<local_scalar_t__, -1, -1> Sigma_eta =
@@ -940,11 +907,11 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
       Eigen::Matrix<local_scalar_t__, -1, -1> Sigma_gamma =
          Eigen::Matrix<local_scalar_t__, -1, -1>::Constant(N_stations,
            N_stations, DUMMY_VAR__);
-      current_statement__ = 20;
+      current_statement__ = 17;
       for (int i = 1; i <= N_stations; ++i) {
-        current_statement__ = 18;
+        current_statement__ = 15;
         for (int j = 1; j <= N_stations; ++j) {
-          current_statement__ = 15;
+          current_statement__ = 12;
           stan::model::assign(Sigma_eta,
             ((1 / tau_eta) *
               stan::math::exp(
@@ -953,7 +920,7 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
                     stan::model::index_uni(i), stan::model::index_uni(j))))),
             "assigning variable Sigma_eta", stan::model::index_uni(i),
                                               stan::model::index_uni(j));
-          current_statement__ = 16;
+          current_statement__ = 13;
           stan::model::assign(Sigma_gamma,
             ((1 / tau_gamma) *
               stan::math::exp(
@@ -964,108 +931,35 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
                                                 stan::model::index_uni(j));
         }
       }
-      Eigen::Matrix<local_scalar_t__, -1, -1> Sigma_delta =
-         Eigen::Matrix<local_scalar_t__, -1, -1>::Constant(N_stations,
-           N_stations, DUMMY_VAR__);
-      current_statement__ = 32;
-      for (int i = 1; i <= N_stations; ++i) {
-        current_statement__ = 30;
-        for (int j = 1; j <= N_stations; ++j) {
-          local_scalar_t__ s = DUMMY_VAR__;
-          current_statement__ = 21;
-          s = 0;
-          current_statement__ = 27;
-          for (int k = 1; k <= N_covariates; ++k) {
-            current_statement__ = 22;
-            stan::math::validate_non_negative_index("column_k",
-                                                    "N_covariates",
-                                                    N_covariates);
-            Eigen::Matrix<local_scalar_t__, -1, 1> column_k =
-               Eigen::Matrix<local_scalar_t__, -1, 1>::Constant(N_covariates,
-                 DUMMY_VAR__);
-            current_statement__ = 23;
-            stan::model::assign(column_k,
-              stan::model::rvalue(A_raw, "A_raw",
-                stan::model::index_omni(), stan::model::index_uni(k)),
-              "assigning variable column_k");
-            local_scalar_t__ t_k = DUMMY_VAR__;
-            current_statement__ = 24;
-            t_k = stan::math::multiply(stan::math::transpose(column_k),
-                    column_k);
-            current_statement__ = 25;
-            s = (s +
-                  (stan::math::exp(
-                     (-0.049 *
-                       stan::model::rvalue(dist, "dist",
-                         stan::model::index_uni(i), stan::model::index_uni(j))))
-                    * t_k));
-          }
-          current_statement__ = 28;
-          stan::model::assign(Sigma_delta, s,
-            "assigning variable Sigma_delta", stan::model::index_uni(i),
-                                                stan::model::index_uni(j));
-        }
-      }
       {
-        current_statement__ = 126;
+        current_statement__ = 69;
         stan::math::validate_non_negative_index("zero", "N_stations",
                                                 N_stations);
         Eigen::Matrix<local_scalar_t__, -1, 1> zero =
            Eigen::Matrix<local_scalar_t__, -1, 1>::Constant(N_stations,
              DUMMY_VAR__);
-        current_statement__ = 127;
+        current_statement__ = 70;
         stan::model::assign(zero, stan::math::rep_vector(0, N_stations),
           "assigning variable zero");
-        current_statement__ = 128;
+        current_statement__ = 71;
         lp_accum__.add(stan::math::normal_lpdf<propto__>(rho, 0, 1));
-        current_statement__ = 129;
+        current_statement__ = 72;
         lp_accum__.add(stan::math::normal_lpdf<propto__>(xi, 0, s0));
-        current_statement__ = 130;
+        current_statement__ = 73;
         lp_accum__.add(stan::math::normal_lpdf<propto__>(beta, 0, s0));
-        current_statement__ = 131;
+        current_statement__ = 74;
         lp_accum__.add(stan::math::gamma_lpdf<propto__>(tau_eta, a, b));
-        current_statement__ = 132;
+        current_statement__ = 75;
         lp_accum__.add(stan::math::gamma_lpdf<propto__>(tau_gamma, a, b));
-        current_statement__ = 133;
+        current_statement__ = 76;
         lp_accum__.add(stan::math::gamma_lpdf<propto__>(tau_epsilon, a, b));
-        current_statement__ = 134;
+        current_statement__ = 77;
         lp_accum__.add(stan::math::normal_lpdf<propto__>(mu, 0, s0));
-        current_statement__ = 139;
-        for (int j = 1; j <= N_covariates; ++j) {
-          current_statement__ = 137;
-          for (int i = 1; i <= j; ++i) {
-            current_statement__ = 135;
-            lp_accum__.add(
-              stan::math::normal_lpdf<propto__>(
-                stan::model::rvalue(A_raw, "A_raw",
-                  stan::model::index_uni(i), stan::model::index_uni(j)), 0,
-                1));
-          }
-        }
-        current_statement__ = 146;
+        current_statement__ = 82;
         for (int i = 1; i <= N_years; ++i) {
-          current_statement__ = 144;
+          current_statement__ = 80;
           for (int j = 1; j <= N_weeks; ++j) {
-            current_statement__ = 142;
-            for (int p = 1; p <= N_covariates; ++p) {
-              current_statement__ = 140;
-              lp_accum__.add(
-                stan::math::multi_normal_lpdf<propto__>(
-                  stan::model::rvalue(
-                    stan::model::rvalue(
-  stan::model::rvalue(delta, "delta", stan::model::index_uni(i)), "delta[i]",
-  stan::model::index_uni(j)),
-                    "delta[i][j]",
-                    stan::model::index_omni(), stan::model::index_uni(p)),
-                  zero, Sigma_gamma));
-            }
-          }
-        }
-        current_statement__ = 151;
-        for (int i = 1; i <= N_years; ++i) {
-          current_statement__ = 149;
-          for (int j = 1; j <= N_weeks; ++j) {
-            current_statement__ = 147;
+            current_statement__ = 78;
             lp_accum__.add(
               stan::math::multi_normal_lpdf<propto__>(
                 stan::math::to_vector(
@@ -1074,18 +968,18 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
                     "eta[i]", stan::model::index_uni(j))), zero, Sigma_eta));
           }
         }
-        current_statement__ = 154;
+        current_statement__ = 85;
         for (int i = 1; i <= N_years; ++i) {
-          current_statement__ = 152;
+          current_statement__ = 83;
           lp_accum__.add(
             stan::math::multi_normal_lpdf<propto__>(
               stan::math::to_vector(
                 stan::model::rvalue(gamma, "gamma",
                   stan::model::index_uni(i))), zero, Sigma_gamma));
         }
-        current_statement__ = 160;
+        current_statement__ = 91;
         for (int i = 1; i <= N_years; ++i) {
-          current_statement__ = 155;
+          current_statement__ = 86;
           lp_accum__.add(
             stan::math::normal_lpdf<propto__>(
               stan::model::rvalue(
@@ -1098,9 +992,9 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
                 stan::math::to_vector(
                   stan::model::rvalue(gamma, "gamma",
                     stan::model::index_uni(i)))), (1 / tau_epsilon)));
-          current_statement__ = 158;
+          current_statement__ = 89;
           for (int j = 2; j <= N_weeks; ++j) {
-            current_statement__ = 156;
+            current_statement__ = 87;
             lp_accum__.add(
               stan::math::normal_lpdf<propto__>(
                 stan::model::rvalue(
@@ -1197,37 +1091,22 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
       current_statement__ = 6;
       gamma = in__.template read<std::vector<std::vector<local_scalar_t__>>>(
                 N_years, N_stations);
-      Eigen::Matrix<double, -1, -1> A_raw =
-         Eigen::Matrix<double, -1, -1>::Constant(N_covariates, N_covariates,
-           std::numeric_limits<double>::quiet_NaN());
-      current_statement__ = 7;
-      A_raw = in__.template read<Eigen::Matrix<local_scalar_t__, -1, -1>>(
-                N_covariates, N_covariates);
-      std::vector<double> phi_delta =
-         std::vector<double>(N_covariates, 
-           std::numeric_limits<double>::quiet_NaN());
-      current_statement__ = 8;
-      phi_delta = in__.template read<std::vector<local_scalar_t__>>(
-                    N_covariates);
       double tau_eta = std::numeric_limits<double>::quiet_NaN();
-      current_statement__ = 9;
+      current_statement__ = 7;
       tau_eta = in__.template read_constrain_lb<local_scalar_t__, 
                   jacobian__>(0, lp__);
       double tau_gamma = std::numeric_limits<double>::quiet_NaN();
-      current_statement__ = 10;
+      current_statement__ = 8;
       tau_gamma = in__.template read_constrain_lb<local_scalar_t__, 
                     jacobian__>(0, lp__);
       double tau_epsilon = std::numeric_limits<double>::quiet_NaN();
-      current_statement__ = 11;
+      current_statement__ = 9;
       tau_epsilon = in__.template read_constrain_lb<local_scalar_t__, 
                       jacobian__>(0, lp__);
       Eigen::Matrix<double, -1, -1> Sigma_eta =
          Eigen::Matrix<double, -1, -1>::Constant(N_stations, N_stations,
            std::numeric_limits<double>::quiet_NaN());
       Eigen::Matrix<double, -1, -1> Sigma_gamma =
-         Eigen::Matrix<double, -1, -1>::Constant(N_stations, N_stations,
-           std::numeric_limits<double>::quiet_NaN());
-      Eigen::Matrix<double, -1, -1> Sigma_delta =
          Eigen::Matrix<double, -1, -1>::Constant(N_stations, N_stations,
            std::numeric_limits<double>::quiet_NaN());
       out__.write(rho);
@@ -1246,8 +1125,6 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
           out__.write(gamma[(sym2__ - 1)][(sym1__ - 1)]);
         }
       }
-      out__.write(A_raw);
-      out__.write(phi_delta);
       out__.write(tau_eta);
       out__.write(tau_gamma);
       out__.write(tau_epsilon);
@@ -1256,11 +1133,11 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
             emit_generated_quantities__)))) {
         return ;
       } 
-      current_statement__ = 20;
+      current_statement__ = 17;
       for (int i = 1; i <= N_stations; ++i) {
-        current_statement__ = 18;
+        current_statement__ = 15;
         for (int j = 1; j <= N_stations; ++j) {
-          current_statement__ = 15;
+          current_statement__ = 12;
           stan::model::assign(Sigma_eta,
             ((1 / tau_eta) *
               stan::math::exp(
@@ -1269,7 +1146,7 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
                     stan::model::index_uni(i), stan::model::index_uni(j))))),
             "assigning variable Sigma_eta", stan::model::index_uni(i),
                                               stan::model::index_uni(j));
-          current_statement__ = 16;
+          current_statement__ = 13;
           stan::model::assign(Sigma_gamma,
             ((1 / tau_gamma) *
               stan::math::exp(
@@ -1280,49 +1157,9 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
                                                 stan::model::index_uni(j));
         }
       }
-      current_statement__ = 32;
-      for (int i = 1; i <= N_stations; ++i) {
-        current_statement__ = 30;
-        for (int j = 1; j <= N_stations; ++j) {
-          double s = std::numeric_limits<double>::quiet_NaN();
-          current_statement__ = 21;
-          s = 0;
-          current_statement__ = 27;
-          for (int k = 1; k <= N_covariates; ++k) {
-            current_statement__ = 22;
-            stan::math::validate_non_negative_index("column_k",
-                                                    "N_covariates",
-                                                    N_covariates);
-            Eigen::Matrix<double, -1, 1> column_k =
-               Eigen::Matrix<double, -1, 1>::Constant(N_covariates,
-                 std::numeric_limits<double>::quiet_NaN());
-            current_statement__ = 23;
-            stan::model::assign(column_k,
-              stan::model::rvalue(A_raw, "A_raw",
-                stan::model::index_omni(), stan::model::index_uni(k)),
-              "assigning variable column_k");
-            double t_k = std::numeric_limits<double>::quiet_NaN();
-            current_statement__ = 24;
-            t_k = stan::math::multiply(stan::math::transpose(column_k),
-                    column_k);
-            current_statement__ = 25;
-            s = (s +
-                  (stan::math::exp(
-                     (-0.049 *
-                       stan::model::rvalue(dist, "dist",
-                         stan::model::index_uni(i), stan::model::index_uni(j))))
-                    * t_k));
-          }
-          current_statement__ = 28;
-          stan::model::assign(Sigma_delta, s,
-            "assigning variable Sigma_delta", stan::model::index_uni(i),
-                                                stan::model::index_uni(j));
-        }
-      }
       if (emit_transformed_parameters__) {
         out__.write(Sigma_eta);
         out__.write(Sigma_gamma);
-        out__.write(Sigma_delta);
       } 
       if (stan::math::logical_negation(emit_generated_quantities__)) {
         return ;
@@ -1330,27 +1167,13 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
       Eigen::Matrix<double, -1, 1> zero =
          Eigen::Matrix<double, -1, 1>::Constant(N_stations,
            std::numeric_limits<double>::quiet_NaN());
-      current_statement__ = 33;
+      current_statement__ = 18;
       stan::model::assign(zero, stan::math::rep_vector(0, N_stations),
         "assigning variable zero");
       std::vector<std::vector<double>> gamma_pred_sim =
          std::vector<std::vector<double>>(N_years_to_pred, 
            std::vector<double>(N_stations_to_pred, 
              std::numeric_limits<double>::quiet_NaN()));
-      std::vector<std::vector<Eigen::Matrix<double, -1, -1>>> delta_pred_sim_t =
-         std::vector<std::vector<Eigen::Matrix<double, -1, -1>>>(
-           N_years_to_pred, 
-           std::vector<Eigen::Matrix<double, -1, -1>>(
-             delta_pred_sim_t_2dim__, 
-             Eigen::Matrix<double, -1, -1>::Constant(N_stations,
-               N_covariates, std::numeric_limits<double>::quiet_NaN())));
-      std::vector<std::vector<Eigen::Matrix<double, -1, -1>>> delta_pred_sim_s_t =
-         std::vector<std::vector<Eigen::Matrix<double, -1, -1>>>(
-           N_years_to_pred, 
-           std::vector<Eigen::Matrix<double, -1, -1>>(
-             delta_pred_sim_s_t_2dim__, 
-             Eigen::Matrix<double, -1, -1>::Constant(N_stations_to_pred,
-               N_covariates, std::numeric_limits<double>::quiet_NaN())));
       std::vector<std::vector<std::vector<double>>> o_pred_sim_t =
          std::vector<std::vector<std::vector<double>>>(N_years_to_pred, 
            std::vector<std::vector<double>>(o_pred_sim_t_2dim__, 
@@ -1369,11 +1192,11 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
       Eigen::Matrix<double, -1, -1> Sigma_gamma_12 =
          Eigen::Matrix<double, -1, -1>::Constant(N_stations_to_pred,
            N_stations, std::numeric_limits<double>::quiet_NaN());
-      current_statement__ = 45;
+      current_statement__ = 28;
       for (int i = 1; i <= N_stations_to_pred; ++i) {
-        current_statement__ = 43;
+        current_statement__ = 26;
         for (int j = 1; j <= N_stations; ++j) {
-          current_statement__ = 41;
+          current_statement__ = 24;
           stan::model::assign(Sigma_gamma_12,
             stan::math::exp(
               (-phi_gamma_esti *
@@ -1387,11 +1210,11 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
       Eigen::Matrix<double, -1, -1> Sigma_eta_12 =
          Eigen::Matrix<double, -1, -1>::Constant(N_stations_to_pred,
            N_stations, std::numeric_limits<double>::quiet_NaN());
-      current_statement__ = 51;
+      current_statement__ = 34;
       for (int i = 1; i <= N_stations_to_pred; ++i) {
-        current_statement__ = 49;
+        current_statement__ = 32;
         for (int j = 1; j <= N_stations; ++j) {
-          current_statement__ = 47;
+          current_statement__ = 30;
           stan::model::assign(Sigma_eta_12,
             stan::math::exp(
               (-phi_eta_esti *
@@ -1405,20 +1228,20 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
       Eigen::Matrix<double, -1, -1> Sigma_gamma_inv =
          Eigen::Matrix<double, -1, -1>::Constant(N_stations, N_stations,
            std::numeric_limits<double>::quiet_NaN());
-      current_statement__ = 53;
+      current_statement__ = 36;
       stan::model::assign(Sigma_gamma_inv, stan::math::inverse(Sigma_gamma),
         "assigning variable Sigma_gamma_inv");
       Eigen::Matrix<double, -1, -1> Sigma_eta_inv =
          Eigen::Matrix<double, -1, -1>::Constant(N_stations, N_stations,
            std::numeric_limits<double>::quiet_NaN());
-      current_statement__ = 55;
+      current_statement__ = 38;
       stan::model::assign(Sigma_eta_inv, stan::math::inverse(Sigma_eta),
         "assigning variable Sigma_eta_inv");
-      current_statement__ = 60;
+      current_statement__ = 43;
       for (int i = 1; i <= N_years_to_pred; ++i) {
-        current_statement__ = 58;
+        current_statement__ = 41;
         for (int j = 1; j <= N_stations_to_pred; ++j) {
-          current_statement__ = 56;
+          current_statement__ = 39;
           stan::model::assign(gamma_pred_sim,
             stan::math::normal_rng(
               stan::math::multiply(
@@ -1444,141 +1267,9 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
                                                    stan::model::index_uni(j));
         }
       }
-      Eigen::Matrix<double, -1, -1> Sigma_delta_12 =
-         Eigen::Matrix<double, -1, -1>::Constant(N_stations_to_pred,
-           N_stations, std::numeric_limits<double>::quiet_NaN());
-      current_statement__ = 73;
-      for (int i = 1; i <= N_stations_to_pred; ++i) {
-        current_statement__ = 71;
-        for (int j = 1; j <= N_stations; ++j) {
-          double s = std::numeric_limits<double>::quiet_NaN();
-          current_statement__ = 62;
-          s = 0;
-          current_statement__ = 68;
-          for (int k = 1; k <= N_covariates; ++k) {
-            current_statement__ = 63;
-            stan::math::validate_non_negative_index("column_k",
-                                                    "N_covariates",
-                                                    N_covariates);
-            Eigen::Matrix<double, -1, 1> column_k =
-               Eigen::Matrix<double, -1, 1>::Constant(N_covariates,
-                 std::numeric_limits<double>::quiet_NaN());
-            current_statement__ = 64;
-            stan::model::assign(column_k,
-              stan::model::rvalue(A_raw, "A_raw",
-                stan::model::index_omni(), stan::model::index_uni(k)),
-              "assigning variable column_k");
-            double t_k = std::numeric_limits<double>::quiet_NaN();
-            current_statement__ = 65;
-            t_k = stan::math::multiply(stan::math::transpose(column_k),
-                    column_k);
-            current_statement__ = 66;
-            s = (s +
-                  (stan::math::exp(
-                     (-0.049 *
-                       stan::model::rvalue(dist_pred, "dist_pred",
-                         stan::model::index_uni(i), stan::model::index_uni(j))))
-                    * t_k));
-          }
-          current_statement__ = 69;
-          stan::model::assign(Sigma_delta_12, s,
-            "assigning variable Sigma_delta_12", stan::model::index_uni(i),
-                                                   stan::model::index_uni(j));
-        }
-      }
-      Eigen::Matrix<double, -1, -1> Sigma_delta_11 =
-         Eigen::Matrix<double, -1, -1>::Constant(N_stations_to_pred,
-           N_stations_to_pred, std::numeric_limits<double>::quiet_NaN());
-      current_statement__ = 86;
-      for (int i = 1; i <= N_stations_to_pred; ++i) {
-        current_statement__ = 84;
-        for (int j = 1; j <= N_stations_to_pred; ++j) {
-          double s = std::numeric_limits<double>::quiet_NaN();
-          current_statement__ = 75;
-          s = 0;
-          current_statement__ = 81;
-          for (int k = 1; k <= N_covariates; ++k) {
-            current_statement__ = 76;
-            stan::math::validate_non_negative_index("column_k",
-                                                    "N_covariates",
-                                                    N_covariates);
-            Eigen::Matrix<double, -1, 1> column_k =
-               Eigen::Matrix<double, -1, 1>::Constant(N_covariates,
-                 std::numeric_limits<double>::quiet_NaN());
-            current_statement__ = 77;
-            stan::model::assign(column_k,
-              stan::model::rvalue(A_raw, "A_raw",
-                stan::model::index_omni(), stan::model::index_uni(k)),
-              "assigning variable column_k");
-            double t_k = std::numeric_limits<double>::quiet_NaN();
-            current_statement__ = 78;
-            t_k = stan::math::multiply(stan::math::transpose(column_k),
-                    column_k);
-            current_statement__ = 79;
-            s = (s +
-                  (stan::math::exp(
-                     (-0.049 *
-                       stan::model::rvalue(dist_pred_to_pred,
-                         "dist_pred_to_pred",
-                         stan::model::index_uni(i), stan::model::index_uni(j))))
-                    * t_k));
-          }
-          current_statement__ = 82;
-          stan::model::assign(Sigma_delta_11, s,
-            "assigning variable Sigma_delta_11", stan::model::index_uni(i),
-                                                   stan::model::index_uni(j));
-        }
-      }
-      current_statement__ = 93;
+      current_statement__ = 49;
       for (int i = 1; i <= N_years_to_pred; ++i) {
-        current_statement__ = 91;
-        for (int j = 1; j <= N_weeks_to_pred; ++j) {
-          current_statement__ = 89;
-          for (int p = 1; p <= N_covariates; ++p) {
-            current_statement__ = 87;
-            stan::model::assign(delta_pred_sim_t,
-              stan::math::multi_normal_rng(zero, Sigma_delta, base_rng__),
-              "assigning variable delta_pred_sim_t", stan::model::index_uni(i),
-                                                       stan::model::index_uni(j),
-                                                       stan::model::index_omni(),
-                                                       stan::model::index_uni(p));
-          }
-        }
-      }
-      current_statement__ = 100;
-      for (int i = 1; i <= N_years_to_pred; ++i) {
-        current_statement__ = 98;
-        for (int j = 1; j <= N_weeks_to_pred; ++j) {
-          current_statement__ = 96;
-          for (int p = 1; p <= N_covariates; ++p) {
-            current_statement__ = 94;
-            stan::model::assign(delta_pred_sim_s_t,
-              stan::math::multi_normal_rng(
-                stan::math::multiply(
-                  stan::math::multiply(Sigma_delta_12,
-                    stan::math::inverse(Sigma_delta)),
-                  stan::model::rvalue(
-                    stan::model::rvalue(
-  stan::model::rvalue(delta_pred_sim_t, "delta_pred_sim_t",
-  stan::model::index_uni(i)),
-  "delta_pred_sim_t[i]", stan::model::index_uni(j)),
-                    "delta_pred_sim_t[i][j]",
-                    stan::model::index_omni(), stan::model::index_uni(p))),
-                stan::math::subtract(Sigma_delta_11,
-                  stan::math::multiply(
-                    stan::math::multiply(Sigma_delta_12,
-                      stan::math::inverse(Sigma_delta)),
-                    stan::math::transpose(Sigma_delta_12))), base_rng__),
-              "assigning variable delta_pred_sim_s_t", stan::model::index_uni(i),
-                                                         stan::model::index_uni(j),
-                                                         stan::model::index_omni(),
-                                                         stan::model::index_uni(p));
-          }
-        }
-      }
-      current_statement__ = 106;
-      for (int i = 1; i <= N_years_to_pred; ++i) {
-        current_statement__ = 101;
+        current_statement__ = 44;
         stan::model::assign(o_pred_sim_t,
           stan::math::to_array_1d(
             stan::math::add(
@@ -1588,10 +1279,10 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
               stan::model::rvalue(mu, "mu", stan::model::index_uni(i)))),
           "assigning variable o_pred_sim_t", stan::model::index_uni(i),
                                                stan::model::index_uni(1));
-        current_statement__ = 104;
+        current_statement__ = 47;
         for (int j = 2;
              j <= stan::math::to_int(stan::math::max(weeks_to_pred)); ++j) {
-          current_statement__ = 102;
+          current_statement__ = 45;
           stan::model::assign(o_pred_sim_t,
             stan::math::to_array_1d(
               stan::math::multi_normal_rng(
@@ -1617,11 +1308,11 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
                                                  stan::model::index_uni(j));
         }
       }
-      current_statement__ = 118;
+      current_statement__ = 61;
       for (int i = 1; i <= N_years_to_pred; ++i) {
-        current_statement__ = 116;
+        current_statement__ = 59;
         for (int j = 1; j <= N_stations_to_pred; ++j) {
-          current_statement__ = 107;
+          current_statement__ = 50;
           stan::model::assign(o_pred_sim_s_t,
             (stan::model::rvalue(gamma_pred_sim, "gamma_pred_sim",
                stan::model::index_uni(i), stan::model::index_uni(j)) +
@@ -1629,11 +1320,11 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
             "assigning variable o_pred_sim_s_t", stan::model::index_uni(i),
                                                    stan::model::index_uni(1),
                                                    stan::model::index_uni(j));
-          current_statement__ = 114;
+          current_statement__ = 57;
           for (int t = 2;
                t <= stan::math::to_int(stan::math::max(weeks_to_pred)); ++t) {
             double G_delta = std::numeric_limits<double>::quiet_NaN();
-            current_statement__ = 108;
+            current_statement__ = 51;
             G_delta = ((1 / tau_eta) *
                         (1 -
                           stan::math::multiply(
@@ -1648,7 +1339,7 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
                                 stan::model::index_uni(j),
                                   stan::model::index_omni())))));
             double arg_1 = std::numeric_limits<double>::quiet_NaN();
-            current_statement__ = 109;
+            current_statement__ = 52;
             arg_1 = ((stan::model::rvalue(xi, "xi",
                         stan::model::index_uni(i)) +
                        (rho *
@@ -1669,7 +1360,7 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
                           stan::model::index_uni(j)),
                         stan::math::to_vector(beta)));
             double arg_2 = std::numeric_limits<double>::quiet_NaN();
-            current_statement__ = 110;
+            current_statement__ = 53;
             arg_2 = stan::math::multiply(
                       stan::math::multiply(
                         stan::model::rvalue(Sigma_eta_12, "Sigma_eta_12",
@@ -1697,9 +1388,9 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
                             "delta_pred_sim_t[i]", stan::model::index_uni(j)),
                           stan::math::to_vector(beta))));
             double zeta = std::numeric_limits<double>::quiet_NaN();
-            current_statement__ = 111;
+            current_statement__ = 54;
             zeta = (arg_1 + arg_2);
-            current_statement__ = 112;
+            current_statement__ = 55;
             stan::model::assign(o_pred_sim_s_t,
               stan::math::normal_rng(zeta, stan::math::abs(G_delta),
                 base_rng__),
@@ -1709,13 +1400,13 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
           }
         }
       }
-      current_statement__ = 125;
+      current_statement__ = 68;
       for (int i = 1; i <= N_years_to_pred; ++i) {
-        current_statement__ = 123;
+        current_statement__ = 66;
         for (int j = 1; j <= N_weeks_to_pred; ++j) {
-          current_statement__ = 121;
+          current_statement__ = 64;
           for (int k = 1; k <= N_stations_to_pred; ++k) {
-            current_statement__ = 119;
+            current_statement__ = 62;
             stan::model::assign(y_pred_sim,
               stan::math::normal_rng(
                 stan::model::rvalue(
@@ -1738,34 +1429,6 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
       for (int sym1__ = 1; sym1__ <= N_stations_to_pred; ++sym1__) {
         for (int sym2__ = 1; sym2__ <= N_years_to_pred; ++sym2__) {
           out__.write(gamma_pred_sim[(sym2__ - 1)][(sym1__ - 1)]);
-        }
-      }
-      for (int sym1__ = 1; sym1__ <= N_covariates; ++sym1__) {
-        for (int sym2__ = 1; sym2__ <= N_stations; ++sym2__) {
-          for (int sym3__ = 1; sym3__ <= delta_pred_sim_t_2dim__; ++sym3__) {
-            for (int sym4__ = 1; sym4__ <= N_years_to_pred; ++sym4__) {
-              out__.write(
-                stan::model::rvalue(delta_pred_sim_t, "delta_pred_sim_t",
-                  stan::model::index_uni(sym4__),
-                    stan::model::index_uni(sym3__),
-                    stan::model::index_uni(sym2__),
-                    stan::model::index_uni(sym1__)));
-            }
-          }
-        }
-      }
-      for (int sym1__ = 1; sym1__ <= N_covariates; ++sym1__) {
-        for (int sym2__ = 1; sym2__ <= N_stations_to_pred; ++sym2__) {
-          for (int sym3__ = 1; sym3__ <= delta_pred_sim_s_t_2dim__; ++sym3__) {
-            for (int sym4__ = 1; sym4__ <= N_years_to_pred; ++sym4__) {
-              out__.write(
-                stan::model::rvalue(delta_pred_sim_s_t, "delta_pred_sim_s_t",
-                  stan::model::index_uni(sym4__),
-                    stan::model::index_uni(sym3__),
-                    stan::model::index_uni(sym2__),
-                    stan::model::index_uni(sym1__)));
-            }
-          }
         }
       }
       for (int sym1__ = 1; sym1__ <= N_stations; ++sym1__) {
@@ -1796,8 +1459,6 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
       out__.write(Sigma_eta_12);
       out__.write(Sigma_gamma_inv);
       out__.write(Sigma_eta_inv);
-      out__.write(Sigma_delta_12);
-      out__.write(Sigma_delta_11);
     } catch (const std::exception& e) {
       stan::lang::rethrow_located(e, locations_array__[current_statement__]);
     }
@@ -1861,23 +1522,6 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
         }
       }
       out__.write(gamma);
-      Eigen::Matrix<local_scalar_t__, -1, -1> A_raw =
-         Eigen::Matrix<local_scalar_t__, -1, -1>::Constant(N_covariates,
-           N_covariates, DUMMY_VAR__);
-      for (int sym1__ = 1; sym1__ <= N_covariates; ++sym1__) {
-        for (int sym2__ = 1; sym2__ <= N_covariates; ++sym2__) {
-          stan::model::assign(A_raw, in__.read<local_scalar_t__>(),
-            "assigning variable A_raw", stan::model::index_uni(sym2__),
-                                          stan::model::index_uni(sym1__));
-        }
-      }
-      out__.write(A_raw);
-      std::vector<local_scalar_t__> phi_delta =
-         std::vector<local_scalar_t__>(N_covariates, DUMMY_VAR__);
-      for (int sym1__ = 1; sym1__ <= N_covariates; ++sym1__) {
-        phi_delta[(sym1__ - 1)] = in__.read<local_scalar_t__>();
-      }
-      out__.write(phi_delta);
       local_scalar_t__ tau_eta = DUMMY_VAR__;
       tau_eta = in__.read<local_scalar_t__>();
       out__.write_free_lb(0, tau_eta);
@@ -1895,12 +1539,10 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
   inline void get_param_names(std::vector<std::string>& names__) const {
     
     names__ = std::vector<std::string>{"rho", "xi", "beta", "eta", "mu",
-      "gamma", "A_raw", "phi_delta", "tau_eta", "tau_gamma", "tau_epsilon",
-      "Sigma_eta", "Sigma_gamma", "Sigma_delta", "zero", "gamma_pred_sim",
-      "delta_pred_sim_t", "delta_pred_sim_s_t", "o_pred_sim_t",
+      "gamma", "tau_eta", "tau_gamma", "tau_epsilon", "Sigma_eta",
+      "Sigma_gamma", "zero", "gamma_pred_sim", "o_pred_sim_t",
       "o_pred_sim_s_t", "y_pred_sim", "Sigma_gamma_12", "Sigma_eta_12",
-      "Sigma_gamma_inv", "Sigma_eta_inv", "Sigma_delta_12",
-      "Sigma_delta_11"};
+      "Sigma_gamma_inv", "Sigma_eta_inv"};
     
     } // get_param_names() 
     
@@ -1915,13 +1557,8 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
       std::vector<size_t>{static_cast<size_t>(N_years)},
       std::vector<size_t>{static_cast<size_t>(N_years),
                           static_cast<size_t>(N_stations)},
-      std::vector<size_t>{static_cast<size_t>(N_covariates),
-                          static_cast<size_t>(N_covariates)},
-      std::vector<size_t>{static_cast<size_t>(N_covariates)},
       std::vector<size_t>{}, std::vector<size_t>{}, std::vector<size_t>{
       },
-      std::vector<size_t>{static_cast<size_t>(N_stations),
-                          static_cast<size_t>(N_stations)},
       std::vector<size_t>{static_cast<size_t>(N_stations),
                           static_cast<size_t>(N_stations)},
       std::vector<size_t>{static_cast<size_t>(N_stations),
@@ -1929,14 +1566,6 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
       std::vector<size_t>{static_cast<size_t>(N_stations)},
       std::vector<size_t>{static_cast<size_t>(N_years_to_pred),
                           static_cast<size_t>(N_stations_to_pred)},
-      std::vector<size_t>{static_cast<size_t>(N_years_to_pred),
-                          static_cast<size_t>(delta_pred_sim_t_2dim__),
-                          static_cast<size_t>(N_stations),
-                          static_cast<size_t>(N_covariates)},
-      std::vector<size_t>{static_cast<size_t>(N_years_to_pred),
-                          static_cast<size_t>(delta_pred_sim_s_t_2dim__),
-                          static_cast<size_t>(N_stations_to_pred),
-                          static_cast<size_t>(N_covariates)},
       std::vector<size_t>{static_cast<size_t>(N_years_to_pred),
                           static_cast<size_t>(o_pred_sim_t_2dim__),
                           static_cast<size_t>(N_stations)},
@@ -1953,11 +1582,7 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
       std::vector<size_t>{static_cast<size_t>(N_stations),
                           static_cast<size_t>(N_stations)},
       std::vector<size_t>{static_cast<size_t>(N_stations),
-                          static_cast<size_t>(N_stations)},
-      std::vector<size_t>{static_cast<size_t>(N_stations_to_pred),
-                          static_cast<size_t>(N_stations)},
-      std::vector<size_t>{static_cast<size_t>(N_stations_to_pred),
-                          static_cast<size_t>(N_stations_to_pred)}};
+                          static_cast<size_t>(N_stations)}};
     
     } // get_dims() 
     
@@ -2005,20 +1630,6 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
         }
       } 
     }
-    for (int sym1__ = 1; sym1__ <= N_covariates; ++sym1__) {
-      {
-        for (int sym2__ = 1; sym2__ <= N_covariates; ++sym2__) {
-          {
-            param_names__.emplace_back(std::string() + "A_raw" + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
-          } 
-        }
-      } 
-    }
-    for (int sym1__ = 1; sym1__ <= N_covariates; ++sym1__) {
-      {
-        param_names__.emplace_back(std::string() + "phi_delta" + '.' + std::to_string(sym1__));
-      } 
-    }
     param_names__.emplace_back(std::string() + "tau_eta");
     param_names__.emplace_back(std::string() + "tau_gamma");
     param_names__.emplace_back(std::string() + "tau_epsilon");
@@ -2041,15 +1652,6 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
           }
         } 
       }
-      for (int sym1__ = 1; sym1__ <= N_stations; ++sym1__) {
-        {
-          for (int sym2__ = 1; sym2__ <= N_stations; ++sym2__) {
-            {
-              param_names__.emplace_back(std::string() + "Sigma_delta" + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
-            } 
-          }
-        } 
-      }
     }
     
     if (emit_generated_quantities__) {
@@ -2063,42 +1665,6 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
           for (int sym2__ = 1; sym2__ <= N_years_to_pred; ++sym2__) {
             {
               param_names__.emplace_back(std::string() + "gamma_pred_sim" + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
-            } 
-          }
-        } 
-      }
-      for (int sym1__ = 1; sym1__ <= N_covariates; ++sym1__) {
-        {
-          for (int sym2__ = 1; sym2__ <= N_stations; ++sym2__) {
-            {
-              for (int sym3__ = 1; sym3__ <= delta_pred_sim_t_2dim__;
-                   ++sym3__) {
-                {
-                  for (int sym4__ = 1; sym4__ <= N_years_to_pred; ++sym4__) {
-                    {
-                      param_names__.emplace_back(std::string() + "delta_pred_sim_t" + '.' + std::to_string(sym4__) + '.' + std::to_string(sym3__) + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
-                    } 
-                  }
-                } 
-              }
-            } 
-          }
-        } 
-      }
-      for (int sym1__ = 1; sym1__ <= N_covariates; ++sym1__) {
-        {
-          for (int sym2__ = 1; sym2__ <= N_stations_to_pred; ++sym2__) {
-            {
-              for (int sym3__ = 1; sym3__ <= delta_pred_sim_s_t_2dim__;
-                   ++sym3__) {
-                {
-                  for (int sym4__ = 1; sym4__ <= N_years_to_pred; ++sym4__) {
-                    {
-                      param_names__.emplace_back(std::string() + "delta_pred_sim_s_t" + '.' + std::to_string(sym4__) + '.' + std::to_string(sym3__) + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
-                    } 
-                  }
-                } 
-              }
             } 
           }
         } 
@@ -2174,24 +1740,6 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
           for (int sym2__ = 1; sym2__ <= N_stations; ++sym2__) {
             {
               param_names__.emplace_back(std::string() + "Sigma_eta_inv" + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
-            } 
-          }
-        } 
-      }
-      for (int sym1__ = 1; sym1__ <= N_stations; ++sym1__) {
-        {
-          for (int sym2__ = 1; sym2__ <= N_stations_to_pred; ++sym2__) {
-            {
-              param_names__.emplace_back(std::string() + "Sigma_delta_12" + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
-            } 
-          }
-        } 
-      }
-      for (int sym1__ = 1; sym1__ <= N_stations_to_pred; ++sym1__) {
-        {
-          for (int sym2__ = 1; sym2__ <= N_stations_to_pred; ++sym2__) {
-            {
-              param_names__.emplace_back(std::string() + "Sigma_delta_11" + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
             } 
           }
         } 
@@ -2244,20 +1792,6 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
         }
       } 
     }
-    for (int sym1__ = 1; sym1__ <= N_covariates; ++sym1__) {
-      {
-        for (int sym2__ = 1; sym2__ <= N_covariates; ++sym2__) {
-          {
-            param_names__.emplace_back(std::string() + "A_raw" + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
-          } 
-        }
-      } 
-    }
-    for (int sym1__ = 1; sym1__ <= N_covariates; ++sym1__) {
-      {
-        param_names__.emplace_back(std::string() + "phi_delta" + '.' + std::to_string(sym1__));
-      } 
-    }
     param_names__.emplace_back(std::string() + "tau_eta");
     param_names__.emplace_back(std::string() + "tau_gamma");
     param_names__.emplace_back(std::string() + "tau_epsilon");
@@ -2280,15 +1814,6 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
           }
         } 
       }
-      for (int sym1__ = 1; sym1__ <= N_stations; ++sym1__) {
-        {
-          for (int sym2__ = 1; sym2__ <= N_stations; ++sym2__) {
-            {
-              param_names__.emplace_back(std::string() + "Sigma_delta" + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
-            } 
-          }
-        } 
-      }
     }
     
     if (emit_generated_quantities__) {
@@ -2302,42 +1827,6 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
           for (int sym2__ = 1; sym2__ <= N_years_to_pred; ++sym2__) {
             {
               param_names__.emplace_back(std::string() + "gamma_pred_sim" + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
-            } 
-          }
-        } 
-      }
-      for (int sym1__ = 1; sym1__ <= N_covariates; ++sym1__) {
-        {
-          for (int sym2__ = 1; sym2__ <= N_stations; ++sym2__) {
-            {
-              for (int sym3__ = 1; sym3__ <= delta_pred_sim_t_2dim__;
-                   ++sym3__) {
-                {
-                  for (int sym4__ = 1; sym4__ <= N_years_to_pred; ++sym4__) {
-                    {
-                      param_names__.emplace_back(std::string() + "delta_pred_sim_t" + '.' + std::to_string(sym4__) + '.' + std::to_string(sym3__) + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
-                    } 
-                  }
-                } 
-              }
-            } 
-          }
-        } 
-      }
-      for (int sym1__ = 1; sym1__ <= N_covariates; ++sym1__) {
-        {
-          for (int sym2__ = 1; sym2__ <= N_stations_to_pred; ++sym2__) {
-            {
-              for (int sym3__ = 1; sym3__ <= delta_pred_sim_s_t_2dim__;
-                   ++sym3__) {
-                {
-                  for (int sym4__ = 1; sym4__ <= N_years_to_pred; ++sym4__) {
-                    {
-                      param_names__.emplace_back(std::string() + "delta_pred_sim_s_t" + '.' + std::to_string(sym4__) + '.' + std::to_string(sym3__) + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
-                    } 
-                  }
-                } 
-              }
             } 
           }
         } 
@@ -2417,37 +1906,19 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
           }
         } 
       }
-      for (int sym1__ = 1; sym1__ <= N_stations; ++sym1__) {
-        {
-          for (int sym2__ = 1; sym2__ <= N_stations_to_pred; ++sym2__) {
-            {
-              param_names__.emplace_back(std::string() + "Sigma_delta_12" + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
-            } 
-          }
-        } 
-      }
-      for (int sym1__ = 1; sym1__ <= N_stations_to_pred; ++sym1__) {
-        {
-          for (int sym2__ = 1; sym2__ <= N_stations_to_pred; ++sym2__) {
-            {
-              param_names__.emplace_back(std::string() + "Sigma_delta_11" + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
-            } 
-          }
-        } 
-      }
     }
     
     } // unconstrained_param_names() 
     
   inline std::string get_constrained_sizedtypes() const {
     
-    return std::string("[{\"name\":\"rho\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"xi\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years) + ",\"element_type\":{\"name\":\"real\"}},\"block\":\"parameters\"},{\"name\":\"beta\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_covariates) + ",\"element_type\":{\"name\":\"real\"}},\"block\":\"parameters\"},{\"name\":\"eta\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_weeks) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations) + ",\"element_type\":{\"name\":\"real\"}}}},\"block\":\"parameters\"},{\"name\":\"mu\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years) + ",\"element_type\":{\"name\":\"real\"}},\"block\":\"parameters\"},{\"name\":\"gamma\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations) + ",\"element_type\":{\"name\":\"real\"}}},\"block\":\"parameters\"},{\"name\":\"A_raw\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_covariates) + ",\"cols\":" + std::to_string(N_covariates) + "},\"block\":\"parameters\"},{\"name\":\"phi_delta\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_covariates) + ",\"element_type\":{\"name\":\"real\"}},\"block\":\"parameters\"},{\"name\":\"tau_eta\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau_gamma\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau_epsilon\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"Sigma_eta\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"transformed_parameters\"},{\"name\":\"Sigma_gamma\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"transformed_parameters\"},{\"name\":\"Sigma_delta\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"transformed_parameters\"},{\"name\":\"zero\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(N_stations) + "},\"block\":\"generated_quantities\"},{\"name\":\"gamma_pred_sim\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations_to_pred) + ",\"element_type\":{\"name\":\"real\"}}},\"block\":\"generated_quantities\"},{\"name\":\"delta_pred_sim_t\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(delta_pred_sim_t_2dim__) + ",\"element_type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations) + ",\"cols\":" + std::to_string(N_covariates) + "}}},\"block\":\"generated_quantities\"},{\"name\":\"delta_pred_sim_s_t\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(delta_pred_sim_s_t_2dim__) + ",\"element_type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations_to_pred) + ",\"cols\":" + std::to_string(N_covariates) + "}}},\"block\":\"generated_quantities\"},{\"name\":\"o_pred_sim_t\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(o_pred_sim_t_2dim__) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations) + ",\"element_type\":{\"name\":\"real\"}}}},\"block\":\"generated_quantities\"},{\"name\":\"o_pred_sim_s_t\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(o_pred_sim_s_t_2dim__) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations_to_pred) + ",\"element_type\":{\"name\":\"real\"}}}},\"block\":\"generated_quantities\"},{\"name\":\"y_pred_sim\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_weeks_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations_to_pred) + ",\"element_type\":{\"name\":\"real\"}}}},\"block\":\"generated_quantities\"},{\"name\":\"Sigma_gamma_12\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations_to_pred) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"generated_quantities\"},{\"name\":\"Sigma_eta_12\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations_to_pred) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"generated_quantities\"},{\"name\":\"Sigma_gamma_inv\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"generated_quantities\"},{\"name\":\"Sigma_eta_inv\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"generated_quantities\"},{\"name\":\"Sigma_delta_12\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations_to_pred) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"generated_quantities\"},{\"name\":\"Sigma_delta_11\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations_to_pred) + ",\"cols\":" + std::to_string(N_stations_to_pred) + "},\"block\":\"generated_quantities\"}]");
+    return std::string("[{\"name\":\"rho\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"xi\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years) + ",\"element_type\":{\"name\":\"real\"}},\"block\":\"parameters\"},{\"name\":\"beta\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_covariates) + ",\"element_type\":{\"name\":\"real\"}},\"block\":\"parameters\"},{\"name\":\"eta\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_weeks) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations) + ",\"element_type\":{\"name\":\"real\"}}}},\"block\":\"parameters\"},{\"name\":\"mu\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years) + ",\"element_type\":{\"name\":\"real\"}},\"block\":\"parameters\"},{\"name\":\"gamma\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations) + ",\"element_type\":{\"name\":\"real\"}}},\"block\":\"parameters\"},{\"name\":\"tau_eta\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau_gamma\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau_epsilon\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"Sigma_eta\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"transformed_parameters\"},{\"name\":\"Sigma_gamma\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"transformed_parameters\"},{\"name\":\"zero\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(N_stations) + "},\"block\":\"generated_quantities\"},{\"name\":\"gamma_pred_sim\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations_to_pred) + ",\"element_type\":{\"name\":\"real\"}}},\"block\":\"generated_quantities\"},{\"name\":\"o_pred_sim_t\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(o_pred_sim_t_2dim__) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations) + ",\"element_type\":{\"name\":\"real\"}}}},\"block\":\"generated_quantities\"},{\"name\":\"o_pred_sim_s_t\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(o_pred_sim_s_t_2dim__) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations_to_pred) + ",\"element_type\":{\"name\":\"real\"}}}},\"block\":\"generated_quantities\"},{\"name\":\"y_pred_sim\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_weeks_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations_to_pred) + ",\"element_type\":{\"name\":\"real\"}}}},\"block\":\"generated_quantities\"},{\"name\":\"Sigma_gamma_12\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations_to_pred) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"generated_quantities\"},{\"name\":\"Sigma_eta_12\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations_to_pred) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"generated_quantities\"},{\"name\":\"Sigma_gamma_inv\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"generated_quantities\"},{\"name\":\"Sigma_eta_inv\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"generated_quantities\"}]");
     
     } // get_constrained_sizedtypes() 
     
   inline std::string get_unconstrained_sizedtypes() const {
     
-    return std::string("[{\"name\":\"rho\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"xi\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years) + ",\"element_type\":{\"name\":\"real\"}},\"block\":\"parameters\"},{\"name\":\"beta\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_covariates) + ",\"element_type\":{\"name\":\"real\"}},\"block\":\"parameters\"},{\"name\":\"eta\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_weeks) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations) + ",\"element_type\":{\"name\":\"real\"}}}},\"block\":\"parameters\"},{\"name\":\"mu\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years) + ",\"element_type\":{\"name\":\"real\"}},\"block\":\"parameters\"},{\"name\":\"gamma\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations) + ",\"element_type\":{\"name\":\"real\"}}},\"block\":\"parameters\"},{\"name\":\"A_raw\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_covariates) + ",\"cols\":" + std::to_string(N_covariates) + "},\"block\":\"parameters\"},{\"name\":\"phi_delta\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_covariates) + ",\"element_type\":{\"name\":\"real\"}},\"block\":\"parameters\"},{\"name\":\"tau_eta\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau_gamma\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau_epsilon\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"Sigma_eta\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"transformed_parameters\"},{\"name\":\"Sigma_gamma\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"transformed_parameters\"},{\"name\":\"Sigma_delta\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"transformed_parameters\"},{\"name\":\"zero\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(N_stations) + "},\"block\":\"generated_quantities\"},{\"name\":\"gamma_pred_sim\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations_to_pred) + ",\"element_type\":{\"name\":\"real\"}}},\"block\":\"generated_quantities\"},{\"name\":\"delta_pred_sim_t\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(delta_pred_sim_t_2dim__) + ",\"element_type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations) + ",\"cols\":" + std::to_string(N_covariates) + "}}},\"block\":\"generated_quantities\"},{\"name\":\"delta_pred_sim_s_t\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(delta_pred_sim_s_t_2dim__) + ",\"element_type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations_to_pred) + ",\"cols\":" + std::to_string(N_covariates) + "}}},\"block\":\"generated_quantities\"},{\"name\":\"o_pred_sim_t\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(o_pred_sim_t_2dim__) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations) + ",\"element_type\":{\"name\":\"real\"}}}},\"block\":\"generated_quantities\"},{\"name\":\"o_pred_sim_s_t\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(o_pred_sim_s_t_2dim__) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations_to_pred) + ",\"element_type\":{\"name\":\"real\"}}}},\"block\":\"generated_quantities\"},{\"name\":\"y_pred_sim\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_weeks_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations_to_pred) + ",\"element_type\":{\"name\":\"real\"}}}},\"block\":\"generated_quantities\"},{\"name\":\"Sigma_gamma_12\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations_to_pred) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"generated_quantities\"},{\"name\":\"Sigma_eta_12\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations_to_pred) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"generated_quantities\"},{\"name\":\"Sigma_gamma_inv\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"generated_quantities\"},{\"name\":\"Sigma_eta_inv\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"generated_quantities\"},{\"name\":\"Sigma_delta_12\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations_to_pred) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"generated_quantities\"},{\"name\":\"Sigma_delta_11\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations_to_pred) + ",\"cols\":" + std::to_string(N_stations_to_pred) + "},\"block\":\"generated_quantities\"}]");
+    return std::string("[{\"name\":\"rho\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"xi\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years) + ",\"element_type\":{\"name\":\"real\"}},\"block\":\"parameters\"},{\"name\":\"beta\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_covariates) + ",\"element_type\":{\"name\":\"real\"}},\"block\":\"parameters\"},{\"name\":\"eta\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_weeks) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations) + ",\"element_type\":{\"name\":\"real\"}}}},\"block\":\"parameters\"},{\"name\":\"mu\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years) + ",\"element_type\":{\"name\":\"real\"}},\"block\":\"parameters\"},{\"name\":\"gamma\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations) + ",\"element_type\":{\"name\":\"real\"}}},\"block\":\"parameters\"},{\"name\":\"tau_eta\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau_gamma\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau_epsilon\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"Sigma_eta\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"transformed_parameters\"},{\"name\":\"Sigma_gamma\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"transformed_parameters\"},{\"name\":\"zero\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(N_stations) + "},\"block\":\"generated_quantities\"},{\"name\":\"gamma_pred_sim\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations_to_pred) + ",\"element_type\":{\"name\":\"real\"}}},\"block\":\"generated_quantities\"},{\"name\":\"o_pred_sim_t\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(o_pred_sim_t_2dim__) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations) + ",\"element_type\":{\"name\":\"real\"}}}},\"block\":\"generated_quantities\"},{\"name\":\"o_pred_sim_s_t\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(o_pred_sim_s_t_2dim__) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations_to_pred) + ",\"element_type\":{\"name\":\"real\"}}}},\"block\":\"generated_quantities\"},{\"name\":\"y_pred_sim\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N_years_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_weeks_to_pred) + ",\"element_type\":{\"name\":\"array\",\"length\":" + std::to_string(N_stations_to_pred) + ",\"element_type\":{\"name\":\"real\"}}}},\"block\":\"generated_quantities\"},{\"name\":\"Sigma_gamma_12\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations_to_pred) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"generated_quantities\"},{\"name\":\"Sigma_eta_12\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations_to_pred) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"generated_quantities\"},{\"name\":\"Sigma_gamma_inv\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"generated_quantities\"},{\"name\":\"Sigma_eta_inv\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(N_stations) + ",\"cols\":" + std::to_string(N_stations) + "},\"block\":\"generated_quantities\"}]");
     
     } // get_unconstrained_sizedtypes() 
     
@@ -2461,26 +1932,18 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
                             const bool emit_generated_quantities = true,
                             std::ostream* pstream = nullptr) const {
       const size_t num_params__ = 
-  ((((((((((1 + N_years) + N_covariates) +
-           ((N_years * N_weeks) * N_stations)) + N_years) +
-         (N_years * N_stations)) + (N_covariates * N_covariates)) +
-       N_covariates) + 1) + 1) + 1);
+  ((((((((1 + N_years) + N_covariates) + ((N_years * N_weeks) * N_stations))
+        + N_years) + (N_years * N_stations)) + 1) + 1) + 1);
       const size_t num_transformed = emit_transformed_parameters * 
-  (((N_stations * N_stations) + (N_stations * N_stations)) +
-    (N_stations * N_stations));
+  ((N_stations * N_stations) + (N_stations * N_stations));
       const size_t num_gen_quantities = emit_generated_quantities * 
-  ((((((((((((N_stations + (N_years_to_pred * N_stations_to_pred)) +
-              (((N_years_to_pred * delta_pred_sim_t_2dim__) * N_stations) *
-                N_covariates)) +
-             (((N_years_to_pred * delta_pred_sim_s_t_2dim__) *
-                N_stations_to_pred) * N_covariates)) +
-            ((N_years_to_pred * o_pred_sim_t_2dim__) * N_stations)) +
-           ((N_years_to_pred * o_pred_sim_s_t_2dim__) * N_stations_to_pred))
-          + ((N_years_to_pred * N_weeks_to_pred) * N_stations_to_pred)) +
-         (N_stations_to_pred * N_stations)) +
-        (N_stations_to_pred * N_stations)) + (N_stations * N_stations)) +
-      (N_stations * N_stations)) + (N_stations_to_pred * N_stations)) +
-    (N_stations_to_pred * N_stations_to_pred));
+  ((((((((N_stations + (N_years_to_pred * N_stations_to_pred)) +
+          ((N_years_to_pred * o_pred_sim_t_2dim__) * N_stations)) +
+         ((N_years_to_pred * o_pred_sim_s_t_2dim__) * N_stations_to_pred)) +
+        ((N_years_to_pred * N_weeks_to_pred) * N_stations_to_pred)) +
+       (N_stations_to_pred * N_stations)) +
+      (N_stations_to_pred * N_stations)) + (N_stations * N_stations)) +
+    (N_stations * N_stations));
       const size_t num_to_write = num_params__ + num_transformed +
         num_gen_quantities;
       std::vector<int> params_i;
@@ -2498,26 +1961,18 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
                             bool emit_generated_quantities = true,
                             std::ostream* pstream = nullptr) const {
       const size_t num_params__ = 
-  ((((((((((1 + N_years) + N_covariates) +
-           ((N_years * N_weeks) * N_stations)) + N_years) +
-         (N_years * N_stations)) + (N_covariates * N_covariates)) +
-       N_covariates) + 1) + 1) + 1);
+  ((((((((1 + N_years) + N_covariates) + ((N_years * N_weeks) * N_stations))
+        + N_years) + (N_years * N_stations)) + 1) + 1) + 1);
       const size_t num_transformed = emit_transformed_parameters * 
-  (((N_stations * N_stations) + (N_stations * N_stations)) +
-    (N_stations * N_stations));
+  ((N_stations * N_stations) + (N_stations * N_stations));
       const size_t num_gen_quantities = emit_generated_quantities * 
-  ((((((((((((N_stations + (N_years_to_pred * N_stations_to_pred)) +
-              (((N_years_to_pred * delta_pred_sim_t_2dim__) * N_stations) *
-                N_covariates)) +
-             (((N_years_to_pred * delta_pred_sim_s_t_2dim__) *
-                N_stations_to_pred) * N_covariates)) +
-            ((N_years_to_pred * o_pred_sim_t_2dim__) * N_stations)) +
-           ((N_years_to_pred * o_pred_sim_s_t_2dim__) * N_stations_to_pred))
-          + ((N_years_to_pred * N_weeks_to_pred) * N_stations_to_pred)) +
-         (N_stations_to_pred * N_stations)) +
-        (N_stations_to_pred * N_stations)) + (N_stations * N_stations)) +
-      (N_stations * N_stations)) + (N_stations_to_pred * N_stations)) +
-    (N_stations_to_pred * N_stations_to_pred));
+  ((((((((N_stations + (N_years_to_pred * N_stations_to_pred)) +
+          ((N_years_to_pred * o_pred_sim_t_2dim__) * N_stations)) +
+         ((N_years_to_pred * o_pred_sim_s_t_2dim__) * N_stations_to_pred)) +
+        ((N_years_to_pred * N_weeks_to_pred) * N_stations_to_pred)) +
+       (N_stations_to_pred * N_stations)) +
+      (N_stations_to_pred * N_stations)) + (N_stations * N_stations)) +
+    (N_stations * N_stations));
       const size_t num_to_write = num_params__ + num_transformed +
         num_gen_quantities;
       vars = std::vector<double>(num_to_write,
@@ -2555,13 +2010,11 @@ class spt_lm_model final : public model_base_crtp<spt_lm_model> {
                               std::vector<int>& params_i,
                               std::vector<double>& vars,
                               std::ostream* pstream__ = nullptr) const {
-     constexpr std::array<const char*, 11> names__{"rho", "xi", "beta",
-      "eta", "mu", "gamma", "A_raw", "phi_delta", "tau_eta", "tau_gamma",
-      "tau_epsilon"};
-      const std::array<Eigen::Index, 11> constrain_param_sizes__{1, N_years,
+     constexpr std::array<const char*, 9> names__{"rho", "xi", "beta", "eta",
+      "mu", "gamma", "tau_eta", "tau_gamma", "tau_epsilon"};
+      const std::array<Eigen::Index, 9> constrain_param_sizes__{1, N_years,
        N_covariates, (N_years * N_weeks * N_stations), N_years,
-       (N_years * N_stations), (N_covariates * N_covariates), N_covariates, 
-       1, 1, 1};
+       (N_years * N_stations), 1, 1, 1};
       const auto num_constrained_params__ = std::accumulate(
         constrain_param_sizes__.begin(), constrain_param_sizes__.end(), 0);
     
