@@ -23,10 +23,6 @@ def standardize_columns(input_df=None):
     - pd.DataFrame
         The DataFrame with specified columns standardized.
     """
-    # If input_df is not provided, use df_final
-    if input_df is None:
-        input_df = df_final.copy()
-
     # Specify columns to standardize
     columns_to_standardize = ['precipitation_sum (mm)', 'rain_sum (mm)', 'snowfall_sum (cm)',
                                'wind_speed_10m_max (km/h)', 'temperature_2m_mean (°C)',
@@ -316,6 +312,22 @@ def calculate_distance_matrix_pred(data_df, data_df_to_pred, id_column='location
     )
 
     return distance_matrix
+
+def compute_vmse(real_values, predicted_values):
+    # Find indices of non-zero values in both arrays
+    non_zero_indices = (real_values != 0) & (predicted_values != 0)
+    
+    # Filter out zero values from both arrays
+    real_values_filtered = real_values[non_zero_indices]
+    predicted_values_filtered = predicted_values[non_zero_indices]
+    
+    # Compute the squared differences
+    squared_diff = (real_values_filtered - predicted_values_filtered) ** 2
+    
+    # Compute the VMSE
+    vmse = np.mean(squared_diff)
+    
+    return vmse
 
 def save_stan_fit_and_summary_with_data(stan_fit, summary_df, file_name_prefix="stan_results"):
     """

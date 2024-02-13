@@ -133,7 +133,7 @@ generated quantities {
           real arg_1 = xi[i] + rho * o_pred_sim_s_t[i][t-1][j] + delta_pred_sim_s_t[i][t][j] * to_vector(beta);
           real arg_2 = Sigma_eta_12[j, ] * Sigma_eta_inv * (to_vector(o_pred_sim_t[i][j]) - xi[i] - rho *  to_vector(o_pred_sim_t[i][t - 1]) - delta_pred_sim_t[i][j] * to_vector(beta));
           real zeta = arg_1 + arg_2;
-          o_pred_sim_s_t[i][t][j] = normal_rng(zeta, G_delta);
+          o_pred_sim_s_t[i][t][j] = normal_rng(zeta, abs(G_delta));
         }
       }
     }
